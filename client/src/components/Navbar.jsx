@@ -23,6 +23,10 @@ const Navbar = () => {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/services">Features</NavLink>
               </li>
+
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/recipes">Recipes</NavLink>
+              </li>
               
             </ul>
             <a className="navbar-brand fs-4 mx-2" href="/">Currently Logged as Guest</a>
@@ -30,8 +34,6 @@ const Navbar = () => {
               <i className="fa fa-sign-in me-2"></i>Login</NavLink>
             <NavLink to="/register" className="bt btn-outline-primary ms-2 px-4 rounded">
               <i className="fa fa-user-plus me-2"></i>Register</NavLink>
-            <NavLink to="/dashboard" className="bt btn-outline-primary ms-2 px-4 rounded">
-              <i className="fa fa-user-plus me-2"></i>Dashboard</NavLink>
           </div>
         </div>
       </nav>

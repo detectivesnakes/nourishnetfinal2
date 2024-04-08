@@ -25,7 +25,7 @@ const Footer = () => {
                                 </li>
                                 <li className="nav-item mb-2">
                                     <a to="#" className="nav-link p-0 text-black">
-                                        Services
+                                    Features
                                     </a>
                                 </li>
                             </ul>
@@ -46,7 +46,7 @@ const Footer = () => {
                                 </li>
                                 <li className="nav-item mb-2">
                                     <a to="#" className="nav-link p-0 text-black">
-                                        Services
+                                        Features
                                     </a>
                                 </li>
                             </ul>

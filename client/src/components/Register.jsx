@@ -51,9 +51,7 @@ const Login = () => {
             <div className="container shadow-lg my-5">
                 <div className="row justify-content-end">
                     <div className="col-md-5 d-flex flex-column align-items-center justify-content-center form order-2">
-                        <h1 className="display-4 fw-bolder my-2">Register</h1>
-                        <p className="lead text-center mb-2">Enter your info</p>
-                        <h5 className="mb-2">or</h5>
+                        <h1 className="display-4 fw-bolder my-2">Already With Us?</h1>
                         <NavLink to="/login" className="btn text-black btn-outline-info rounded-pill pb-2 w-50 m-2 mb-2">
                             Log In
                         </NavLink>

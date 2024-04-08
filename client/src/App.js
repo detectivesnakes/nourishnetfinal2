@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
+import Recipes from './components/Recipes';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/login" Component={Login}/>
         <Route exact path="/register" Component={Register}/>
         <Route exact path="/dashboard" Component={Dashboard}/>
+        <Route exact path="/recipes" Component={Recipes}/>
       </Routes>
       <Footer/>
     </>
