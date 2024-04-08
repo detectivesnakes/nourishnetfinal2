@@ -1,0 +1,5 @@
+MONGO
+nourishnet2024
+5d85OcvJlVr5y4rT
+
+mongodb+srv://nourishnet2024:5d85OcvJlVr5y4rT@cluster0.rpfsjei.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
