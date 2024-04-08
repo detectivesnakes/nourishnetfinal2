@@ -29,7 +29,7 @@ const Login = () => {
                 })
             });
             if(res.status === 400 || !res){
-                window.alert("bad creds")
+                window.alert("Bad Credentials")
             } else {
                 window.alert("Login Successful");
                 window.location.reload();

@@ -36,9 +36,9 @@ const Login = () => {
             })
 
             if(res.status === 400 || !res){
-                window.alert("Already used details")
+                window.alert ("An account is already bound to this email")
             } else {
-                window.alert("Welcome to Nourishnet!");
+                window.alert("Registration Successful!");
                 history.pushState('/login')
             }
         } catch (err) {
