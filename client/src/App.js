@@ -1,13 +1,17 @@
 import './App.css';
-import Navbar from './components/Navbar';
 import Home from './components/Home';
-import About from './components/About';
+import Recipes from './components/Recipes';
+import Dashboard from './components/Dashboard';
+
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+
+import About from './components/About';
 import Services from './components/Services';
+
 import Login from './components/Login';
 import Register from './components/Register';
-import Dashboard from './components/Dashboard';
-import Recipes from './components/Recipes';
+
 import {Routes, Route} from 'react-router-dom';
 
 function App() {

@@ -1,10 +1,10 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+/*import {NavLink} from 'react-router-dom';*/
 
 const Dashboard = () => {
   return (
     <div>
-      DO LATER GUESTS CAN COME TOO
+      SIGNED_IN_DASH
     </div>
   );
 }
