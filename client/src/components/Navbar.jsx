@@ -29,11 +29,11 @@ const Navbar = () => {
               </li>
               
             </ul>
-            <a className="navbar-brand fs-4 mx-2" href="/">Currently Logged as Guest</a>
+            <a className="navbar-brand fs-2 mx-2 me-6" href="/">Currently Logged as Guest</a>
             <NavLink to="/login" className="bt btn-outline-primary ms-2 px-4 rounded">
-              <i className="fa fa-sign-in me-2"></i>Login</NavLink>
+              <i className="fa fa-sign-in"></i>Login</NavLink>
             <NavLink to="/register" className="bt btn-outline-primary ms-2 px-4 rounded">
-              <i className="fa fa-user-plus me-2"></i>Register</NavLink>
+              <i className="fa fa-user-plus"></i>Register</NavLink>
           </div>
         </div>
       </nav>
