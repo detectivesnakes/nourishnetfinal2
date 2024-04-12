@@ -22,12 +22,12 @@
 
 /* FORM */
 .form{
-    background: rgb(233,218,210);
+    background: rgb(0,85,180);
+    background: linear-gradient(90deg, rgb(170,200,170) 0%, rgba(215,200,170,1)
+    100%);
 }
 
 /* FOOT */
 .footer{
-    background: rgb(0,101,219);
-    background: linear-gradient(90deg, rgb(170,200,170) 0%, rgba(215,200,170,1)
-    100%);
+    background: rgb(215,200,170);
 }

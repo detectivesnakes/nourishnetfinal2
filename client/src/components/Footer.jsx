@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -7,33 +8,49 @@ const Footer = () => {
                 <footer className="py-5">
                     <div className="row">
                         <div className="col-2">
-                            <h5>Links</h5>
+                            <h5>Quick Links</h5>
                             <ul className="nav flex-column">
                                 <li className="nav-item mb-2">
-                                    <a to="#" className="nav-link p-0 text-black">
+                                    <NavLink to="/" className="nav-link p-0 text-black">
                                         Home
-                                    </a>
+                                    </NavLink>
                                 </li>
                                 <li className="nav-item mb-2">
-                                    <a to="#" className="nav-link p-0 text-black">
-                                        About
-                                    </a>
+                                    <NavLink to="/recipes" className="nav-link p-0 text-black">
+                                        Recipes
+                                    </NavLink>
                                 </li>
                                 <li className="nav-item mb-2">
-                                    <a to="#" className="nav-link p-0 text-black">
-                                    Features
-                                    </a>
+                                    <NavLink to="/services" className="nav-link p-0 text-black">
+                                        Features
+                                    </NavLink>
                                 </li>
                             </ul>
                         </div>
 
-                        
+                        <div className="col-3">
+                            <h5>Need Help?</h5>
+                            <ul className="nav flex-column">
+                                <li className="nav-item mb-2">
+                                    <NavLink to="#" className="nav-link p-0 text-black">
+                                        FAQ
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item mb-2">
+                                    <NavLink to="#" className="nav-link p-0 text-black">
+                                        About
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item mb-2">
+                                    <NavLink to="#" className="nav-link p-0 text-black">
+                                        Contact Us
+                                    </NavLink>
+                                </li>
+                            </ul>
+                        </div>
 
-                        <div className="col-3 offset-7">
-                            <form>
-                                <h5>Lorem ipsum dolor sit amet.</h5>
-                                <p>CSS here</p>
-                            </form>
+                        <div className="col-4 offset-3">
+                            <img src="/assets/cartoon_icon.jpg" width={120} height={120} alt="About" className="offset-8"/>
                         </div>
                     </div>
                 </footer>
