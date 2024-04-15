@@ -1,5 +1,6 @@
 import React from 'react';
 import background from './kitchen.jpg';
+import {NavLink} from 'react-router-dom';
 
 const Recipes = () => {
   return (
@@ -15,8 +16,11 @@ const Recipes = () => {
                             type="text"
                             class="form-control"
                             name="userSearch"
-                        />
+                        />        
                     </div>
+                    <NavLink to="/register" className="btn text-black btn-outline-info rounded-pill mt-4 width: 100">
+                        Register to Create a Recipe
+                    </NavLink>
                 </div>
             </div>
         </section>

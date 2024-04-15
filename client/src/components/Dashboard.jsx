@@ -4,7 +4,7 @@ import React from 'react';
 const Dashboard = () => {
   return (
     <div>
-      SIGNED_IN_DASH
+      Only visible when signed in
     </div>
   );
 }
