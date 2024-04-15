@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './components/Home';
 import Recipes from './components/Recipes';
+import RecipeForm from './components/RecipeForm';
 import Dashboard from './components/Dashboard';
 
 import Navbar from './components/Navbar';
@@ -11,6 +12,8 @@ import Services from './components/Services';
 
 import Login from './components/Login';
 import Register from './components/Register';
+
+import Testpage from './components/Testpage';
 
 import {Routes, Route} from 'react-router-dom';
 
@@ -26,6 +29,8 @@ function App() {
         <Route exact path="/register" Component={Register}/>
         <Route exact path="/dashboard" Component={Dashboard}/>
         <Route exact path="/recipes" Component={Recipes}/>
+        <Route exact path="/testpage" Component={Testpage}/>
+        <Route exact path="/recipeform" Component={RecipeForm}/>
       </Routes>
       <Footer/>
     </>
