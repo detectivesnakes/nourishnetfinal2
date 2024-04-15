@@ -13,6 +13,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 
 import {Routes, Route} from 'react-router-dom';
+import CreateRecipes from './components/CreateRecipes';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/register" Component={Register}/>
         <Route exact path="/dashboard" Component={Dashboard}/>
         <Route exact path="/recipes" Component={Recipes}/>
+        <Route exact path="/createrecipes" Component={CreateRecipes}/>
       </Routes>
       <Footer/>
     </>
