@@ -1,13 +1,7 @@
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
 
-// recipe schema struct for docs
 const recipeSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    author: {
+    title: {
         type: String,
         required: true
     },
@@ -20,13 +14,11 @@ const recipeSchema = new mongoose.Schema({
         required: true
     },
     tags: [{
-        ingredient: {
-            type: String,
-            required: true
-        }
-    
+        type: String,
+        required: true
     }]
-})
+});
 
-const Recipes = new mongoose.model("RECIPE", recipeSchema);
-module.exports = Recipes;
+
+const RecipeModel = mongoose.model("Recipe", recipeSchema);
+module.exports = RecipeModel;

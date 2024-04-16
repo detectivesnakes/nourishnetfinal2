@@ -4,6 +4,7 @@ const express = require('express');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const RecipeModel = require('./models/recipeSchema')
 
 const app = express();
 
@@ -14,6 +15,7 @@ const port = process.env.PORT;
 
 // req model
 const Users = require('./models/userSchema');
+const Recipes = require('./models/recipeSchema');
 
 // frontend cookie grab
 app.use(express.json());
@@ -75,9 +77,22 @@ app.post('/login', async (req, res)=>{
     }
 })
 
+// Recipe Database
+app.post("/createrecipes", async (req, res) => {
+    try {
+        const recipe = new RecipeModel(req.body);
+        const savedRecipe = await recipe.save();
+        res.status(201).json(savedRecipe);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
 // run server
 app.listen(port, ()=>{
     console.log("Server Listening");
 })
 
 // npm run dev
+
+

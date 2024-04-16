@@ -1,58 +1,106 @@
 import React, { useState } from "react";
-import axios from 'axios'
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
-//Function that Grabs each Event (Input data) and sets each input into a useState where our data will be stored for creating new Recipes
-function CreateRecipes  () {
-    const [title, setTitle] = useState()
-    const [description, setDescription] = useState()
-    const [ingredients, setIngredients] = useState()
-    const [tags, setTags] = useState()
-    const navigate = useNavigate()
+const CreateRecipes = () => {
+    const [recipeData, setRecipeData] = useState({
+        title: "",
+        description: "",
+        ingredients: "",
+        tags: ""
+    });
 
-    //Once the User clicks submit each Event (e) gets posted to the database and get's loged whether it succesfully succeded for failed.
-    const Submit = (e) => {
+    const navigate = useNavigate();
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setRecipeData({
+            ...recipeData,
+            [name]: value
+        });
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3001/createRecipe", {title, description, ingredients, tags})
-        .then(result => {
-            console.log(result)
-            navigate('/')
-        })
-        .catch(err => console.log(err))
-    }
 
+        try {
+            await axios.post("http://localhost:3000/createrecipes", recipeData);
+            navigate('/');
+        } catch (error) {
+            console.error("Error submitting recipe:", error);
+        }
+    };
 
     return (
-        //Page Elements and Structure
-        <div className = "d-flex vh-100 bg-primary justify-content-center align-items-center">
-            <div className='w-50 bg-white rounded p-3'>
-                <form onSubmit={Submit}>
-                    <h2>Add Recipe</h2>
-                    <div className='mb-2'>
-                        <label htmlFor="">Title</label>
-                        <input type="text" placeholder='Enter Recipe Name' className='form-control' 
-                        onChange={(e) => setTitle(e.target.value)}/>
-                    </div>
-                    <div className='mb-2'>
-                        <label htmlFor="">Description</label>
-                        <input type="text" placeholder='Enter Recipe Description' className='form-control' 
-                        onChange={(e) => setDescription(e.target.value)}/>
-                    </div>
-                    <div className='mb-2'>
-                        <label htmlFor="">Ingredients</label>
-                        <input type="text" placeholder='Enter Recipe Ingredients' className='form-control' 
-                        onChange={(e) => setIngredients(e.target.value)}/>
-                    </div>
-                    <div className='mb-2'>
-                        <label htmlFor="">Tags</label>
-                        <input type="text" placeholder='Enter Recipe Tags' className='form-control' 
-                        onChange={(e) => setTags(e.target.value)}/>
-                    </div>
-                    <button className='btn btn-success'>Submit</button>
-                </form>
+        <div className="container shadow-lg my-5">
+            <div className="row justify-content-end">
+                <div className="col-md-5 d-flex flex-column align-items-center justify-content-center form order-2">
+                    <h1 className="display-4 fw-bolder my-2">Add Recipe</h1>
+                </div>
+                <div className="col-md-6 p-5">
+                    <form onSubmit={handleSubmit} method="POST">
+                        <div className="mb-2">
+                            <label htmlFor="title" className="form-label">
+                                Title
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="title"
+                                name="title"
+                                placeholder="Enter Recipe Name"
+                                value={recipeData.title}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="mb-2">
+                            <label htmlFor="description" className="form-label">
+                                Description
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="description"
+                                name="description"
+                                placeholder="Enter Recipe Description"
+                                value={recipeData.description}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="mb-2">
+                            <label htmlFor="ingredients" className="form-label">
+                                Ingredients
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="ingredients"
+                                name="ingredients"
+                                placeholder="Enter Recipe Ingredients (comma-separated)"
+                                value={recipeData.ingredients}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="mb-2">
+                            <label htmlFor="tags" className="form-label">
+                                Tags
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="tags"
+                                name="tags"
+                                placeholder="Enter Recipe Tags (comma-separated)"
+                                value={recipeData.tags}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <button type="submit" className="btn btn-primary my-2 mb-3">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default CreateRecipes;
