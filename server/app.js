@@ -88,6 +88,26 @@ app.post("/createrecipes", async (req, res) => {
     }
 });
 
+app.get("/recipes", async (req, res) => {
+    try {
+        const titleQuery = req.query.title; // Get the title query parameter from the request
+        let recipes;
+
+        if (titleQuery) {
+            // If titleQuery exists, search by title
+            recipes = await RecipeModel.find({ title: { $regex: new RegExp(titleQuery, "i") } }); // Case-insensitive search
+        } else {
+            // If no titleQuery, fetch all recipes
+            recipes = await RecipeModel.find();
+        }
+
+        res.json(recipes); // Send the fetched recipes as a JSON response
+    } catch (err) {
+        console.error("Error fetching recipes:", err);
+        res.status(500).json({ message: "Server Error" });
+    }
+});
+
 // run server
 app.listen(port, ()=>{
     console.log("Server Listening");

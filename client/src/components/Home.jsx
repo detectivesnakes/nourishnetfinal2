@@ -1,7 +1,6 @@
 import React from 'react'
 import About from './About'
 import Services from './Services'
-import CreateRecipes from './CreateRecipes'
 import { NavLink } from 'react-router-dom';
 
 const Home = () => {
