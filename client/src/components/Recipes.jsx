@@ -5,6 +5,8 @@ import axios from 'axios';
 import {FaPizzaSlice, FaHamburger} from 'react-icons/fa';
 import {GiNoodles, GiChopsticks} from 'react-icons/gi';
 import styled from 'styled-components';
+import Trending from "../components/Trending";
+import {motion} from 'framer-motion';
 
 const Recipes = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -72,6 +74,15 @@ const Recipes = () => {
                                 ))}
                             </ul>
                         </div>
+                        <motion.div
+                            animate={{opacity: 1}}
+                            initial={{opacity: 0}}
+                            exit={{opacity: 0}}
+                            transition={{duration: 0.5}}
+                        >
+                        <Trending />
+                        </motion.div>
+
                         <NavLink to="/register" className="btn text-black btn-outline-info rounded-pill mt-4">
                             Register to Create a Recipe
                         </NavLink>
