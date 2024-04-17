@@ -21,6 +21,10 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item">
+                <NavLink className="nav-link" to="/createrecipes">CreateRecipes</NavLink>
+              </li>
+
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/recipes">Recipes</NavLink>
               </li>
 
@@ -30,7 +34,11 @@ const Navbar = () => {
                
               <li className="nav-item">
                 <NavLink className="nav-link" to="/services">Features</NavLink>
-              </li> 
+              </li>
+
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/testpage">Admin Panel</NavLink>
+              </li>
             </ul>
             <a className="navbar-brand fs-2 mx-2 me-6" href="/">Currently Logged as Guest</a>
             <NavLink to="/login" className="bt btn-outline-primary ms-2 px-4 rounded">

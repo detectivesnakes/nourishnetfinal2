@@ -5,8 +5,8 @@ mongoose.connect(db, {
     useNewUrlParser : true,
     useUnifiedTopology: true
 }).then(()=>{
-    console.log("Connection Successful");
+    console.log("Mongo Connected");
 }).catch((err)=>{
-    console.log("Mongo Connection Error")
+    console.log("Mongo Error: ")
     console.log(err)
 })
