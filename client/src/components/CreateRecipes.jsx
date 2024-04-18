@@ -14,10 +14,20 @@ const CreateRecipes = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setRecipeData({
-            ...recipeData,
-            [name]: value
-        });
+
+        // If the name is 'tags', split the value by commas to create an array of tags
+        if (name === 'tags') {
+            const tagsArray = value.split(',').map(tag => tag.trim());
+            setRecipeData({
+                ...recipeData,
+                [name]: tagsArray
+            });
+        } else {
+            setRecipeData({
+                ...recipeData,
+                [name]: value
+            });
+        }
     };
 
     const handleSubmit = async (e) => {
@@ -92,6 +102,20 @@ const CreateRecipes = () => {
                                 name="tags"
                                 placeholder="Enter Recipe Tags (comma-separated)"
                                 value={recipeData.tags}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="mb-2">
+                            <label htmlFor="ingredients" className="form-label">
+                                Author
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="Author"
+                                name="Author"
+                                placeholder="Can Enter Author for Now"
+                                value={recipeData.Author}
                                 onChange={handleChange}
                             />
                         </div>

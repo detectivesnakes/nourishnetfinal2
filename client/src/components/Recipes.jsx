@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
 import background from './kitchen.jpg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom'; // Importing Link
 import axios from 'axios';
 
 const Recipes = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [searchType, setSearchType] = useState('title'); 
     const [recipes, setRecipes] = useState([]);
 
     const handleSearch = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/recipes?title=${searchTerm}`);
+            const params = {
+                [searchType]: searchTerm.trim(),
+            };
+            const response = await axios.get(`http://localhost:3000/recipes`, { params });
             setRecipes(response.data);
         } catch (error) {
             console.error('Error fetching recipes:', error);
+        }
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
         }
     };
 
@@ -28,10 +38,20 @@ const Recipes = () => {
                                 <input 
                                     type="text"
                                     className="form-control"
-                                    placeholder="Search by title..."
+                                    placeholder="Search..."
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
+                                    onKeyPress={handleKeyPress}
                                 />
+                                <select 
+                                    className="form-select"
+                                    onChange={(e) => setSearchType(e.target.value)}
+                                >
+                                    <option value="title">By Title</option>
+                                    <option value="ingredients">By Ingredients</option>
+                                    <option value="tags">By tags</option>
+                                    <option value="Author">By Author</option>
+                                </select>
                                 <button 
                                     className="btn btn-outline-secondary" 
                                     type="button"
@@ -43,9 +63,10 @@ const Recipes = () => {
                             <ul className="list-group">
                                 {recipes.map(recipe => (
                                     <li key={recipe._id} className="list-group-item">
-                                        <h5>{recipe.title}</h5>
-                                        <p>Summary: <br></br>{recipe.description}</p>
+                                        <h5>{recipe.title}</h5> {/* Displaying title at the top */}
+                                        <p>Summary: <br/>{recipe.description}</p>
                                         <p>Author: {recipe.Author}</p>
+                                        <Link to={`/recipe/${recipe._id}`} className="btn btn-primary">View Recipe</Link> {/* View Recipe button at the bottom */}
                                     </li>
                                 ))}
                             </ul>

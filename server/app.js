@@ -90,24 +90,66 @@ app.post("/createrecipes", async (req, res) => {
 
 app.get("/recipes", async (req, res) => {
     try {
-        const titleQuery = req.query.title; // Get the title query parameter from the request
+        const { title, ingredients, tags, Author } = req.query;
         let recipes;
 
-        if (titleQuery) {
-            // If titleQuery exists, search by title
-            recipes = await RecipeModel.find({ title: { $regex: new RegExp(titleQuery, "i") } }); // Case-insensitive search
+        if (title && ingredients && tags && Author) {
+            // Search by title, ingredients, tags, and Author
+            recipes = await RecipeModel.find({
+                $or: [
+                    { title: { $regex: new RegExp(title, "i") } },
+                    { ingredients: { $regex: new RegExp(ingredients, "i") } },
+                    { tags: { $regex: new RegExp(tags, "i") } },
+                    { Author: { $regex: new RegExp(Author, "i") } }
+                ]
+            });
+        } else if (title && ingredients) {
+            // Search by title and ingredients
+            recipes = await RecipeModel.find({
+                $or: [
+                    { title: { $regex: new RegExp(title, "i") } },
+                    { ingredients: { $regex: new RegExp(ingredients, "i") } }
+                ]
+            });
+        } else if (title) {
+            // Search by title
+            recipes = await RecipeModel.find({ title: { $regex: new RegExp(title, "i") } });
+        } else if (ingredients) {
+            // Search by ingredients
+            recipes = await RecipeModel.find({ ingredients: { $regex: new RegExp(ingredients, "i") } });
+        } else if (tags) {
+            // Search by tags
+            recipes = await RecipeModel.find({ tags: { $regex: new RegExp(tags, "i") } });
+        } else if (Author) {
+            // Search by Author
+            recipes = await RecipeModel.find({ Author: { $regex: new RegExp(Author, "i") } });
         } else {
-            // If no titleQuery, fetch all recipes
+            // If no query parameters, fetch all recipes
             recipes = await RecipeModel.find();
         }
 
-        res.json(recipes); // Send the fetched recipes as a JSON response
+        res.json(recipes);
     } catch (err) {
         console.error("Error fetching recipes:", err);
         res.status(500).json({ message: "Server Error" });
     }
 });
 
+
+//Gets the recipe info from the search bar when the recipe is clicked on
+app.get('/recipes/:recipeId', async (req, res) => {
+    try {
+      const recipe = await RecipeModel.findById(req.params.recipeId);
+      if (!recipe) {
+        return res.status(404).json({ message: 'Recipe not found' });
+      }
+      res.json(recipe);
+    } catch (error) {
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
+  
+  
 // run server
 app.listen(port, ()=>{
     console.log("Server Listening");

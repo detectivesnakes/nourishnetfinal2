@@ -16,7 +16,11 @@ const recipeSchema = new mongoose.Schema({
     tags: [{
         type: String,
         required: true
-    }]
+    }],
+    Author: {
+        type: String,
+        required: true
+    },
 });
 
 

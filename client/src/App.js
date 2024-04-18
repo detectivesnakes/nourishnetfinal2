@@ -17,6 +17,7 @@ import CreateRecipes from './components/CreateRecipes';
 import Testpage from './components/Testpage';
 
 import {Routes, Route} from 'react-router-dom';
+import RecipeTemplate from './components/RecipeTemplate';
 
 
 function App() {
@@ -33,6 +34,8 @@ function App() {
         <Route exact path="/recipes" Component={Recipes}/>
         <Route exact path="/createrecipes" Component={CreateRecipes}/>
         <Route exact path="/testpage" Component={Testpage}/>
+        <Route path="/recipe/:recipeId" element={<RecipeTemplate />} />
+
       </Routes>
       <Footer/>
     </>
