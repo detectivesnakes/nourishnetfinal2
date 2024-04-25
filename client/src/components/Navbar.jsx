@@ -21,27 +21,19 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item">
-                <NavLink className="nav-link" to="/createrecipes">CreateRecipes</NavLink>
+                <NavLink className="nav-link" to="/createrecipes">Add</NavLink>
               </li>
 
               <li className="nav-item">
-                <NavLink className="nav-link" to="/RecipeTemplate">RecipeTemplate</NavLink>
+                <NavLink className="nav-link" to="/RecipeTemplate">Template</NavLink>
               </li>
 
               <li className="nav-item">
-                <NavLink className="nav-link" to="/recipes">Recipes</NavLink>
+                <NavLink className="nav-link" to="/recipes">Browse</NavLink>
               </li>
 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/about">About</NavLink>
-              </li>
-               
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/services">Features</NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/testpage">Admin Panel</NavLink>
               </li>
             </ul>
             <a className="navbar-brand fs-2 mx-2 me-6" href="/">Currently Logged as Guest</a>

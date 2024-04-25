@@ -58,14 +58,15 @@ app.post('/login', async (req, res)=>{
         if(user) {
             // bcrypt pass hash check
             const isMatch = await bcryptjs.compare(password, user.password);
+            //console.log(isMatch);
             if(isMatch) {
-                // gen cookie for user upon match
+                // everything works up to here, ismatch returns correctly
                 const token = await user.generateToken();
                 res.cookie("jwt", token, {
                     expires: new Date(Date.now + 86400000),
                     httpOnly: true
                 })
-                res.status(200).send("logged in")
+                res.status(200).send("logged in");
             } else {
                 res.status(400).send("bad pass");
             }

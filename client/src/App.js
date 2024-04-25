@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './components/Home';
 import Recipes from './components/Recipes';
-import RecipeForm from './components/RecipeForm';
+//import RecipeForm from './components/RecipeForm';
 import Dashboard from './components/Dashboard';
 
 import Navbar from './components/Navbar';
