@@ -58,7 +58,7 @@ app.post('/login', async (req, res)=>{
         if(user) {
             // bcrypt pass hash check
             const isMatch = await bcryptjs.compare(password, user.password);
-            //console.log(isMatch);
+            console.log(user, isMatch);
             if(isMatch) {
                 // everything works up to here, ismatch returns correctly
                 const token = await user.generateToken();
