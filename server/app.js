@@ -58,17 +58,17 @@ app.post('/login', async (req, res)=>{
         if(user) {
             // bcrypt pass hash check
             const isMatch = await bcryptjs.compare(password, user.password);
-            console.log(user, isMatch);
             if(isMatch) {
-                // everything works up to here, ismatch returns correctly
-                const token = await user.generateToken();
-                res.cookie("jwt", token, {
-                    expires: new Date(Date.now + 86400000),
-                    httpOnly: true
-                })
+                //const token = await user.generateToken();
+                //res.cookie("jwt", token, {
+                //    expires: new Date(Date.now + 86400),
+                //    httpOnly: true
+                //});
+
+                console.log("\n\nyoung metro heater"); // <<-- doesn't get to this point
                 res.status(200).send("logged in");
             } else {
-                res.status(400).send("bad pass");
+                res.status(400).send("no pass match");
             }
         } else {
             res.status(400).send("bad email");
