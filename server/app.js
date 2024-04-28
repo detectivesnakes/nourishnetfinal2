@@ -15,7 +15,9 @@ const port = process.env.PORT;
 
 // req model
 const Users = require('./models/userSchema');
+const Message = require('./models/msgSchema');
 const Recipes = require('./models/recipeSchema');
+const authenticate = require('./middlewares/authenticate');
 
 // frontend cookie grab
 app.use(express.json());
@@ -59,19 +61,20 @@ app.post('/login', async (req, res)=>{
             // bcrypt pass hash check
             const isMatch = await bcryptjs.compare(password, user.password);
             if(isMatch) {
-                //const token = await user.generateToken();
-                //res.cookie("jwt", token, {
-                //    expires: new Date(Date.now + 86400),
-                //    httpOnly: true
-                //});
+                const token = await user.generateToken();
 
-                console.log("\n\nyoung metro heater"); // <<-- doesn't get to this point
-                res.status(200).send("logged in");
+                res.cookie("jwt", token, {
+                    expires: new Date(Date.now() + 86400000),
+                    httpOnly: true
+                })
+
+                console.log("\nYoung Metro Trusts You"); // <<-- doesn't get to this point
+                res.status(200).send("Logged In");
             } else {
-                res.status(400).send("no pass match");
+                res.status(400).send("Bad Credentials");
             }
         } else {
-            res.status(400).send("bad email");
+            res.status(400).send("Bad Credentials");
         }
     } catch (err) {
         res.status(400).send(err);
@@ -149,13 +152,44 @@ app.get('/recipes/:recipeId', async (req, res) => {
       res.status(500).json({ message: 'Server error' });
     }
   });
-  
+
+// question to us
+app.post('/message', async (req, res)=>{
+    try {
+        const name = req.body.name;
+        const email = req.body.email;
+        const message = req.body.message;
+
+        const sendMsg = new Message({
+            name: name,
+            email: email,
+            message: message
+        });
+
+        const created = await sendMsg.save();
+        console.log(created);
+        res.status(200).send("message sent");
+
+    } catch (err) {
+        res.status(400).send(err);
+    }
+})
+
+// logout
+app.get('/logout', (req, res)=>{
+    res.clearCookie("jwt", {path: '/'})
+    res.status(200).send("User Logged Out")
+})
+
+// auth
+app.get('/auth', authenticate, (req, res)=>{
+
+})
   
 // run server
 app.listen(port, ()=>{
     console.log("Server Listening");
 })
 
+// backend complete
 // npm run dev
-
-

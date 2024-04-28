@@ -7,8 +7,8 @@ const About = () => {
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-md-6">
-                        <img src="/assets/about1.png" alt="About"
-                        className="w-75 mt-5" />
+                        <img src="/assets/clipart_0.png" alt="About"
+                        className="w-50 mt-5" />
                     </div>
                     <div className="col-md-6">
                         <h1 className="display-6">Our Mission</h1>

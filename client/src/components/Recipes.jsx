@@ -49,7 +49,7 @@ const Recipes = () => {
                                 >
                                     <option value="title">By Title</option>
                                     <option value="ingredients">By Ingredients</option>
-                                    <option value="tags">By tags</option>
+                                    <option value="tags">By Tags</option>
                                     <option value="Author">By Author</option>
                                 </select>
                                 <button 
@@ -71,9 +71,11 @@ const Recipes = () => {
                                 ))}
                             </ul>
                         </div>
-                        <NavLink to="/register" className="btn text-black btn-outline-info rounded-pill mt-4">
-                            Register to Create a Recipe
-                        </NavLink>
+                        <div className="col-md-0 d-flex justify-content-center">
+                            <NavLink to="/register" className="btn text-black btn-outline-info rounded-pill mt-4 w-35">
+                                Join Us to Submit!
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             </section>
