@@ -1,7 +1,6 @@
 import './App.css';
 import Home from './components/Home';
 import Recipes from './components/Recipes';
-//import RecipeForm from './components/RecipeForm';
 import Dashboard from './components/Dashboard';
 
 import Navbar from './components/Navbar';
@@ -16,7 +15,7 @@ import Register from './components/Register';
 import Logout from './components/Logout';
 
 import CreateRecipes from './components/CreateRecipes';
-import Testpage from './components/Testpage';
+//import Testpage from './components/Testpage';
 
 import { Routes, Route } from 'react-router-dom';
 import RecipeTemplate from './components/RecipeTemplate';
@@ -40,11 +39,11 @@ function App() {
       });
       if (res.status === 200) {
         setauth(true)
-        setauth(false)
+        setauth1(false)
       }
       if (res.status === 401) {
         setauth(false)
-        setauth(true)
+        setauth1(true)
       }
     } catch (err) {
       console.log(err);
