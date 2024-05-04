@@ -17,7 +17,6 @@ const port = process.env.PORT;
 const Users = require('./models/userSchema');
 const Message = require('./models/msgSchema');
 const Recipes = require('./models/recipeSchema');
-const authenticate = require('./middlewares/authenticate');
 
 // frontend cookie grab
 app.use(express.json());
@@ -179,11 +178,6 @@ app.post('/message', async (req, res)=>{
 app.get('/logout', (req, res)=>{
     res.clearCookie("jwt", {path: '/'})
     res.status(200).send("User Logged Out")
-})
-
-// auth
-app.get('/auth', authenticate, (req, res)=>{
-
 })
   
 // run server
