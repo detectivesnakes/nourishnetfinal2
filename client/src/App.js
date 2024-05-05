@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
+import FAQ from './components/FAQ';
 
 import Login from './components/Login';
 import Register from './components/Register';
@@ -21,25 +22,26 @@ import RecipeTemplate from './components/RecipeTemplate';
 
 function App() {
   return (
-    <>
+    <div className='App'>
       <Navbar/>
       <Routes>
-        <Route exact path="/" Component={Home} />
-        <Route exact path="/about" Component={About} />
-        <Route exact path="/services" Component={Services} />
-        <Route exact path="/contact" Component={Contact} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
 
-        <Route exact path="/recipes" Component={Recipes} />
-        <Route exact path="/createrecipes" Component={CreateRecipes} />
+        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/createrecipes" element={<CreateRecipes />} />
         <Route path="/recipe/:recipeId" element={<RecipeTemplate />} />
 
-        <Route exact path="/login" Component={Login}/>
-        <Route exact path="/register" Component={Register}/>
-        <Route exact path="/dashboard" Component={Dashboard}/>
-        <Route exact path="/logout" elemeComponentnt={Logout}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/register" element={<Register />}/>
+        <Route path="/dashboard" element={<Dashboard />}/>
+        <Route path="/logout" element={<Logout />}/>
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 

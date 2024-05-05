@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
+
 const CreateRecipes = () => {
+    const navigate = useNavigate();
     const [recipeData, setRecipeData] = useState({
         title: "",
         description: "",
         ingredients: "",
         tags: ""
     });
-
-    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -32,7 +32,6 @@ const CreateRecipes = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         try {
             await axios.post("http://localhost:3000/createrecipes", recipeData);
             navigate('/');

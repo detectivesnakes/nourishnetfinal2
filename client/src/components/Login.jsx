@@ -36,8 +36,9 @@ const Login = () => {
                 window.alert("Bad Credentials")
             } else {
                 window.alert("Login Successful");
-                navigate('/home');
-                window.location.reload();
+                setTimeout(() => {
+                    navigate('/home');
+                }, 1000);
             }
         } catch (err) {
             console.log(err);
