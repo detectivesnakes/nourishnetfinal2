@@ -5,6 +5,7 @@ import axios from 'axios';
 import {FaPizzaSlice, FaHamburger} from 'react-icons/fa';
 import {GiNoodles, GiChopsticks} from 'react-icons/gi';
 import styled from 'styled-components';
+import Trending from "../components/Trending";
 
 
 const Recipes = () => {
@@ -95,6 +96,7 @@ const Recipes = () => {
                                 ))}
                             </ul>
                         </div>
+                        <Trending />
                         <div className="col-md-0 d-flex justify-content-center">
                             <NavLink to="/register" className="btn text-black btn-outline-info rounded-pill mt-4 w-35">
                                 Join Us to Submit!
