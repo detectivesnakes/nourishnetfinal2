@@ -3,11 +3,17 @@
     background: rgb(0,101,219);
     background: linear-gradient(90deg, rgb(170,200,170) 0%, rgba(215,200,170,1)
     100%);
-    min-height: 340px;
+    min-height: 210px;
 }
 
 #about{
     background: rgb(215,200,170);
+    min-height: 410px;
+}
+
+#faq{
+    background: rgb(215,200,170);
+    min-height: 410px;
 }
 
 /* ANIM */

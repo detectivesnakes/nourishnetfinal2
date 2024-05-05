@@ -1,7 +1,6 @@
 const User = require('../models/userSchema');
 const jwt = require('jsonwebtoken');
-require('dotenv');
-dotenv.config({path: './config.env'});
+require('dotenv').config({path: './config.env'});
 
 module.exports.userVerification = (req, res) => {
     const token = res.cookies.token

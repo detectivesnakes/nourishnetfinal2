@@ -1,10 +1,10 @@
 import React from 'react'
 import {useState} from 'react';
-import {NavLink} from 'react-router-dom';
-import {useNavigate} from 'react-router-dom';
+//import {NavLink} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
-const Login = () => {
-    const history = useNavigate()
+const Register = () => {
+    const navigate = useNavigate()
     const [user, setUser] = useState({
         username: "",
         email: "",
@@ -39,7 +39,9 @@ const Login = () => {
                 window.alert ("An account is already bound to this email")
             } else {
                 window.alert("Registration Successful!");
-                history.pushState('/login')
+                setTimeout(() => {
+                    navigate('/login');
+                }, 1000);
             }
         } catch (err) {
             console.log(err);
@@ -52,9 +54,9 @@ const Login = () => {
                 <div className="row justify-content-end">
                     <div className="col-md-5 d-flex flex-column align-items-center justify-content-center form order-2">
                         <h1 className="display-4 fw-bolder my-2">Already With Us?</h1>
-                        <NavLink to="/login" className="btn text-black btn-outline-info rounded-pill pb-2 w-50 m-2 mb-2">
+                        <Link to="/login" className="btn text-black btn-outline-info rounded-pill pb-2 w-50 m-2 mb-2">
                             Log In
-                        </NavLink>
+                        </Link>
                     </div>
                     <div className="col-md-6 p-5">
                         <form onSubmit={handleSubmit} method="POST">
@@ -107,4 +109,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Register

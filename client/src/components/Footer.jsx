@@ -32,12 +32,12 @@ const Footer = () => {
                             <h5>Need Help?</h5>
                             <ul className="nav flex-column">
                                 <li className="nav-item mb-2">
-                                    <NavLink to="#" className="nav-link p-0 text-black">
+                                    <NavLink to="/faq" className="nav-link p-0 text-black">
                                         FAQ
                                     </NavLink>
                                 </li>
                                 <li className="nav-item mb-2">
-                                    <NavLink to="#" className="nav-link p-0 text-black">
+                                    <NavLink to="/about" className="nav-link p-0 text-black">
                                         About
                                     </NavLink>
                                 </li>

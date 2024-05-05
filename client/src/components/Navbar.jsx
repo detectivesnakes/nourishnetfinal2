@@ -24,9 +24,11 @@ const Navbar = (props) => {
                 <NavLink className="nav-link" to="/createrecipes">Add</NavLink>
               </li>
 
+              {/*
               <li className="nav-item">
                 <NavLink className="nav-link" to="/RecipeTemplate">Template</NavLink>
               </li>
+              */}
 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/recipes">Browse</NavLink>
