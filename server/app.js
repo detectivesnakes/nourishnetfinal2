@@ -4,8 +4,8 @@ const express = require('express');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-const RecipeModel = require('./models/recipeSchema')
-
+const RecipeModel = require('./models/recipeSchema');
+const cors = require('cors');
 const app = express();
 
 // config env
@@ -64,7 +64,7 @@ app.post('/login', async (req, res)=>{
 
                 res.cookie("jwt", token, {
                     expires: new Date(Date.now() + 86400000),
-                    httpOnly: true
+                    httpOnly: false
                 })
 
                 console.log("\nYoung Metro Trusts You"); // <<-- doesn't get to this point
@@ -91,6 +91,7 @@ app.post("/createrecipes", async (req, res) => {
     }
 });
 
+// get recipes
 app.get("/recipes", async (req, res) => {
     try {
         const { title, ingredients, tags, Author } = req.query;
@@ -184,6 +185,14 @@ app.get('/logout', (req, res)=>{
 app.listen(port, ()=>{
     console.log("Server Listening");
 })
+
+app.use(
+    cors({
+        origin: ["http://localhost:3000"],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true
+    })
+);
 
 // backend complete
 // npm run dev
