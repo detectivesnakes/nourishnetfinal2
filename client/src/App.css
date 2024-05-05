@@ -12,8 +12,9 @@
 }
 
 #faq{
-    background: rgb(215,200,170);
-    min-height: 410px;
+    background: linear-gradient(90deg, rgb(100,240,160) 0%, rgba(170,255,220) 100%);
+    min-height: 240px;
+    max-height: 240px;
 }
 
 /* ANIM */
