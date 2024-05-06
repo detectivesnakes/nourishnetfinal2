@@ -25,8 +25,8 @@ const RecipeTemplate = () => {
   }, [recipeId]);
 
   const handleTagClick = (tag) => {
-    // Handle tag click action (e.g., search for recipes with this tag)
-    console.log('Clicked tag:', tag);
+    // Redirect to TagSearch page with the tag as a query parameter
+    window.location.href = `/tagSearch?tag=${tag}`;
   };
 
   if (loading) {

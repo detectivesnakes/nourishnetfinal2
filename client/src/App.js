@@ -18,6 +18,7 @@ import Testpage from './components/Testpage';
 
 import {Routes, Route} from 'react-router-dom';
 import RecipeTemplate from './components/RecipeTemplate';
+import TagSearch from './components/TagSearch';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/register" Component={Register}/>
         <Route exact path="/dashboard" Component={Dashboard}/>
         <Route exact path="/recipes" Component={Recipes}/>
+        <Route exact path="/tagSearch" Component={TagSearch}/>
         <Route exact path="/createrecipes" Component={CreateRecipes}/>
         <Route exact path="/testpage" Component={Testpage}/>
         <Route path="/recipe/:recipeId" element={<RecipeTemplate />} />
