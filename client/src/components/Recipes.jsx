@@ -62,11 +62,14 @@ const Recipes = () => {
                             </div>
                             <ul className="list-group">
                                 {recipes.map(recipe => (
-                                    <li key={recipe._id} className="list-group-item">
-                                        <h5>{recipe.title}</h5> {/* Displaying title at the top */}
-                                        <p>Summary: <br/>{recipe.description}</p>
-                                        <p>Author: {recipe.Author}</p>
-                                        <Link to={`/recipe/${recipe._id}`} className="btn btn-primary">View Recipe</Link> {/* View Recipe button at the bottom */}
+                                    <li key={recipe._id} className="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5>{recipe.title}</h5> {/* Displaying title at the top */}
+                                            <p>Summary: <br/>{recipe.description}</p>
+                                            <p>Author: {recipe.Author}</p>
+                                            <Link to={`/recipe/${recipe._id}`} className="btn btn-primary">View Recipe</Link> {/* View Recipe button at the bottom */}
+                                        </div>
+                                        {recipe.imageURI && <img src={recipe.imageURI} alt={recipe.title} style={{ width: '100px', height: '100px' }} />} {/* Display thumbnail if imageURI exists */}
                                     </li>
                                 ))}
                             </ul>
