@@ -37,12 +37,15 @@ const TagSearch = () => {
                             <p className="lead text-center fs-4 mb-5">Let's Cook!</p>
                             <ul className="list-group">
                                 {recipes.map(recipe => (
-                                    <li key={recipe._id} className="list-group-item">
-                                        <h5>{recipe.title}</h5>
-                                        <p>Summary: {recipe.description}</p>
-                                        <p>Author: {recipe.Author}</p>
-                                        <p>Tags: {Array.isArray(recipe.tags) ? recipe.tags.map(tag => <span key={tag} className="badge bg-secondary me-1">{tag}</span>) : recipe.tags}</p>
-                                        <Link to={`/recipe/${recipe._id}`} className="btn btn-primary">View Recipe</Link>
+                                    <li key={recipe._id} className="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5>{recipe.title}</h5> {/* Displaying title at the top */}
+                                            <p>Summary: {recipe.description}</p>
+                                            <p>Author: {recipe.Author}</p>
+                                            <p>Tags: {Array.isArray(recipe.tags) ? recipe.tags.map(tag => <span key={tag} className="badge bg-secondary me-1">{tag}</span>) : recipe.tags}</p>
+                                            <Link to={`/recipe/${recipe._id}`} className="btn btn-primary">View Recipe</Link> {/* View Recipe button at the bottom */}
+                                        </div>
+                                        {recipe.imageURI && <img src={recipe.imageURI} alt={recipe.title} style={{ width: '100px', height: '100px' }} />} {/* Display thumbnail if imageURI exists */}
                                     </li>
                                 ))}
                             </ul>
