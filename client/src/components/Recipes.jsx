@@ -81,9 +81,7 @@ const Recipes = () => {
                                     className="btn btn-outline-secondary" 
                                     type="button"
                                     onClick={handleSearch}
-                                >
-                                    Search
-                                </button>
+                                >Search</button>
                             </div>
                             <ul className="list-group">
                                 {recipes.map(recipe => (
@@ -96,7 +94,7 @@ const Recipes = () => {
                                 ))}
                             </ul>
                         </div>
-                        <Trending />
+                        {/*<Trending /> <-- figure out problem     */} 
                         <div className="col-md-0 d-flex justify-content-center">
                             <NavLink to="/register" className="btn text-black btn-outline-info rounded-pill mt-4 w-35">
                                 Join Us to Submit!
