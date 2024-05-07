@@ -38,7 +38,7 @@ const Recipes = () => {
             <section id="home">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-md-8 mt-5">
+                        <div className="col-md-8 mt-5 mb-5">
                             <h1 className="display-4 fw-bolder mb text-center">Recipe Search</h1>
                             <p className="lead text-center fs-4 mb-5">Let's Cook!</p>
                             {/*
@@ -61,6 +61,9 @@ const Recipes = () => {
                                 </SLink>
                             </List>
                             */}
+
+                            
+
                             <div className="input-group mb-3">
                                 <input 
                                     type="text"

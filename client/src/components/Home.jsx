@@ -3,7 +3,7 @@ import About from './About'
 import Services from './Services'
 import { NavLink } from 'react-router-dom';
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div>
             <section id="home">
@@ -12,9 +12,11 @@ const Home = () => {
                         <div className="col-md-8 mt-4 mb-2">
                             <h1 className="display-4 fw-bolder mb-2 text-center">NourishNet</h1>
                             <p className="lead text-center fs-4">Take control of your diet!</p>
+
                             <div className="buttons d-flex justify-content-center">
-                                <NavLink to="/register" className="btn btn-light me-4 rounded">Get Started</NavLink>
+                                <NavLink to="/Recipes" className="btn btn-light me-4 rounded">Get Cooking!</NavLink>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

@@ -2,13 +2,13 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
-        <section id="about">
+    <div class="anim_gradient">
+        <section>
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-md-6">
                         <img src="/assets/clipart_0.png" alt="About"
-                        className="w-50 mt-5" />
+                        className="w-25" />
                     </div>
                     <div className="col-md-6">
                         <h1 className="display-6">Our Mission</h1>

@@ -16,6 +16,13 @@
     background: rgb(134, 180, 131);
 }
 
+/* RECIPE */
+#recipe{
+    background-image: url('board.png');
+    background-repeat: no-repeat;
+    padding: 1px;
+}
+
 #faq{
     background: linear-gradient(90deg, rgb(100,240,160) 0%, rgba(170,255,220) 100%);
     min-height: 240px;
@@ -39,3 +46,20 @@
     100%);
 }
 
+.anim_gradient {
+    background: linear-gradient(132deg, #F4D03F  0%, #16A085 100%);
+            backgroundSize : "400% 400%";
+            animation : "gradient 25s ease infinite";
+        }
+          
+    @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+};

@@ -38,6 +38,7 @@ const RecipeTemplate = () => {
   }
 
   return (
+  <section id="recipe">
     <div className="container my-5 py-5">
       <div className="row">
         <div className="col-md-6">
@@ -50,7 +51,7 @@ const RecipeTemplate = () => {
               recipe.tags.map((tag, index) => (
                 <button 
                   key={index} 
-                  className="btn btn-outline-secondary btn-sm mx-1 mb-1"
+                  className="btn btn-outline-dark btn-sm mx-1 mb-1"
                   onClick={() => handleTagClick(tag)}
                 >
                   {tag}
@@ -69,6 +70,7 @@ const RecipeTemplate = () => {
         )}
       </div>
     </div>
+  </section>
   );
 };
 

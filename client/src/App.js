@@ -14,14 +14,13 @@ import Logout from './components/Logout';
 import CreateRecipes from './components/CreateRecipes';
 import { Routes, Route } from 'react-router-dom';
 import RecipeTemplate from './components/RecipeTemplate';
-import ProtectedRoute from './ProtectedRoute';
 import { useEffect, useState } from 'react';
 import TagSearch from './components/TagSearch';
 
 function App() {
 
   const [auth, setauth] = useState(false);
-  const [auth1, setauth1] = useState(true);
+  //const [auth1, setauth1] = useState(true);
 
   const isLoggedIn = async () => {
     try {

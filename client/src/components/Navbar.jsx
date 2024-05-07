@@ -18,9 +18,6 @@ const Navbar = (props) => {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/recipes">Browse</NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/about">About</NavLink>
-              </li>
               </>:<>
               <li className="nav-item">
                 <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
@@ -33,9 +30,6 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/recipes">Browse</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/about">About</NavLink>
               </li>
               </>}
             </ul>

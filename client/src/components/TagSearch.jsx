@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import background from './kitchen.jpg';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
-import { NavLink, Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
+//import { NavLink } from 'react-router-dom'; 
 
 const TagSearch = () => {
     const location = useLocation();
