@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useNavigate} from 'react-router';
 
 const Logout = () => {
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const Logout = async () => {
         try {
@@ -16,8 +16,8 @@ const Logout = () => {
             if(res.status === 401 || !res){
                 window.alert("Please Try Again");
             }else{
-                history('/home');
-                window.location.reload()
+                navigate('/');
+                window.location.reload();
             }
         } catch (err) {
             console.log(err)

@@ -41,6 +41,7 @@ const Register = () => {
                 window.alert("Registration Successful!");
                 setTimeout(() => {
                     navigate('/login');
+                    window.location.reload();
                 }, 1000);
             }
         } catch (err) {

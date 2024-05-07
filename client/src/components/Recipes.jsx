@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import background from './kitchen.jpg';
-import { NavLink, Link } from 'react-router-dom'; // Importing Link
+import { Link } from 'react-router-dom'; // Importing Link
+//import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-import {FaPizzaSlice, FaHamburger} from 'react-icons/fa';
-import {GiNoodles, GiChopsticks} from 'react-icons/gi';
-import styled from 'styled-components';
+//import {FaPizzaSlice, FaHamburger} from 'react-icons/fa';
+//import {GiNoodles, GiChopsticks} from 'react-icons/gi';
+//import styled from 'styled-components';
 //import Trending from "../components/Trending";
 
 
@@ -39,6 +40,7 @@ const Recipes = () => {
                         <div className="col-md-8 mt-5">
                             <h1 className="display-4 fw-bolder mb text-center">Recipe Search</h1>
                             <p className="lead text-center fs-4 mb-5">Let's Cook!</p>
+                            {/*
                             <List>
                                 <SLink to={'/cuisine/Italian'}>
                                 <FaPizzaSlice />
@@ -56,9 +58,8 @@ const Recipes = () => {
                                     <GiChopsticks />
                                     <h4>Japanese</h4>
                                 </SLink>
-
                             </List>
-
+                            */}
                             <div className="input-group mb-3">
                                 <input 
                                     type="text"
@@ -94,12 +95,13 @@ const Recipes = () => {
                                 ))}
                             </ul>
                         </div>
-                        {/*<Trending /> <-- figure out problem     */} 
+                        {/*<Trending /> <-- figure out problem      
                         <div className="col-md-0 d-flex justify-content-center">
                             <NavLink to="/register" className="btn text-black btn-outline-info rounded-pill mt-4 w-35">
                                 Join Us to Submit!
                             </NavLink>
                         </div>
+                        */}
                     </div>
                 </div>
             </section>
@@ -108,7 +110,7 @@ const Recipes = () => {
 }
 
 
-const List = styled.div`
+/*const List = styled.div`
     display: flex;
     justify-content: center;
     margin: 1rem 0rem;
@@ -152,6 +154,6 @@ const SLink = styled(NavLink)`
     }
 
 
-`;
+`;*/
 
 export default Recipes;

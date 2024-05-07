@@ -23,6 +23,12 @@ const userSchema = new mongoose.Schema({
             type: String,
             required: true
         }
+    }],
+    filters: [{
+        filter: {
+            type: String,
+            required: false
+        }
     }]
 })
 

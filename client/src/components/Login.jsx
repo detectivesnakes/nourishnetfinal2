@@ -37,7 +37,8 @@ const Login = () => {
             } else {
                 window.alert("Login Successful");
                 setTimeout(() => {
-                    navigate('/home');
+                    navigate('/');
+                    window.location.reload();
                 }, 1000);
             }
         } catch (err) {
