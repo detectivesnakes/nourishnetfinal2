@@ -9,7 +9,8 @@ const CreateRecipes = () => {
         title: "",
         description: "",
         ingredients: "",
-        tags: ""
+        tags: "",
+        imageURI: "" // Add imageURI field
     });
 
     const handleChange = (e) => {
@@ -105,7 +106,21 @@ const CreateRecipes = () => {
                             />
                         </div>
                         <div className="mb-2">
-                            <label htmlFor="ingredients" className="form-label">
+                            <label htmlFor="imageURI" className="form-label">
+                                Image URI
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="imageURI"
+                                name="imageURI"
+                                placeholder="Enter Image URI"
+                                value={recipeData.imageURI}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="mb-2">
+                            <label htmlFor="Author" className="form-label">
                                 Author
                             </label>
                             <input

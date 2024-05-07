@@ -24,6 +24,11 @@ const RecipeTemplate = () => {
     fetchRecipe();
   }, [recipeId]);
 
+  const handleTagClick = (tag) => {
+    // Redirect to TagSearch page with the tag as a query parameter
+    window.location.href = `/tagSearch?tag=${tag}`;
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -34,20 +39,35 @@ const RecipeTemplate = () => {
 
   return (
     <div className="container my-5 py-5">
-      <h1 className="display-4">{recipe ? recipe.title : 'Recipe Not Found'}</h1>
-      <p><strong>Description:</strong> {recipe ? recipe.description : 'N/A'}</p>
-      <p><strong>Ingredients:</strong> {recipe ? recipe.ingredients : 'N/A'}</p>
-      <p>
-        <strong>Tags:</strong> 
-        {recipe && recipe.tags.length > 0 ? (
-          recipe.tags.map((tag, index) => (
-            <span key={index} className="badge bg-secondary mx-1">{tag}</span>
-          ))
-        ) : (
-          'N/A'
+      <div className="row">
+        <div className="col-md-6">
+          <h1 className="display-4">{recipe ? recipe.title : 'Recipe Not Found'}</h1>
+          <p><strong>Description:</strong> {recipe ? recipe.description : 'N/A'}</p>
+          <p><strong>Ingredients:</strong> {recipe ? recipe.ingredients : 'N/A'}</p>
+          <p>
+            <strong>Tags:</strong> 
+            {recipe && recipe.tags.length > 0 ? (
+              recipe.tags.map((tag, index) => (
+                <button 
+                  key={index} 
+                  className="btn btn-outline-secondary btn-sm mx-1 mb-1"
+                  onClick={() => handleTagClick(tag)}
+                >
+                  {tag}
+                </button>
+              ))
+            ) : (
+              'N/A'
+            )}
+          </p>
+          <p><strong>Author:</strong> {recipe ? recipe.Author : 'N/A'}</p>
+        </div>
+        {recipe && recipe.imageURI && (
+          <div className="col-md-6 d-flex justify-content-center align-items-center">
+            <img src={recipe.imageURI} alt={recipe.title} className="img-fluid" style={{ maxWidth: '100%', maxHeight: '400px' }} />
+          </div>
         )}
-      </p>
-      <p><strong>Author:</strong> {recipe ? recipe.Author : 'N/A'}</p>
+      </div>
     </div>
   );
 };
