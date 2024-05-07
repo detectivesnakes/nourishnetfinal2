@@ -21,7 +21,7 @@ const Login = () => {
 
     const handleSubmit = async (event) =>{
         event.preventDefault();
-        const {email, password} = user;
+        const { email, password } = user;
         try {
             const res = await fetch('/login', {
                 method: "POST",
@@ -35,6 +35,9 @@ const Login = () => {
             if(res.status === 400 || !res){
                 window.alert("Bad Credentials")
             } else {
+                // Retrieve username from response headers
+                const username = res.headers.get('X-Username');
+                localStorage.setItem('username', username); // Store the username
                 window.alert("Login Successful");
                 setTimeout(() => {
                     navigate('/');
@@ -44,7 +47,7 @@ const Login = () => {
         } catch (err) {
             console.log(err);
         }
-    }
+    }    
 
     return (
         <div>

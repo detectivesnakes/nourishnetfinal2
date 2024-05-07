@@ -1,11 +1,14 @@
-//import React, { useState, useEffect } from "react";
-//import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { NavLink } from 'react-router-dom';
 
 const Dashboard = () => {
-  //const [name, setName] = useState("");
-  //const [email, setEmail] = useState("");
-  //const [password, setPassword] = useState("");
-  //const [confirmPassword, setConfirmPassword] = useState("");
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    // Retrieve the username from local storage
+    const storedUsername = localStorage.getItem('username');
+    setUsername(storedUsername);
+  }, []);
 
   return (
     <div>
@@ -13,7 +16,7 @@ const Dashboard = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-8 mt-4 mb-2">
-              <h1 className="display-4 fw-bolder mb-2 text-center">Hello, NULL</h1>
+              <h1 className="display-4 fw-bolder mb-2 text-center">Hello, {username || "Guest"}</h1>
               <p className="lead text-center fs-4">Your Profile</p>
               <div className="col-md-6">
                 <form method="POST">
@@ -26,6 +29,8 @@ const Dashboard = () => {
                       class="form-control"
                       id="name"
                       name="username"
+                      defaultValue={username} // Set default value to current username
+                      disabled // Disable editing
                     />
                   </div>
                   <div class="mb-2">
