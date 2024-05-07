@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import background from './kitchen.jpg';
-import { NavLink, Link } from 'react-router-dom'; // Importing Link
+import { Link } from 'react-router-dom'; // Importing Link
+//import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+//import {FaPizzaSlice, FaHamburger} from 'react-icons/fa';
+//import {GiNoodles, GiChopsticks} from 'react-icons/gi';
+//import styled from 'styled-components';
+//import Trending from "../components/Trending";
+
 
 const Recipes = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -35,6 +41,26 @@ const Recipes = () => {
                         <div className="col-md-8 mt-5">
                             <h1 className="display-4 fw-bolder mb text-center">Recipe Search</h1>
                             <p className="lead text-center fs-4 mb-5">Let's Cook!</p>
+                            {/*
+                            <List>
+                                <SLink to={'/cuisine/Italian'}>
+                                <FaPizzaSlice />
+                                <h4>Italian</h4>
+                                </SLink>
+                                <SLink to={'/cuisine/American'}>
+                                    <FaHamburger />
+                                    <h4>American</h4>
+                                </SLink>
+                                <SLink to={'/cuisine/Thai'}>
+                                    <GiNoodles />
+                                    <h4>Thai</h4>
+                                </SLink>
+                                <SLink to={'/cuisine/Japanese'}>
+                                    <GiChopsticks />
+                                    <h4>Japanese</h4>
+                                </SLink>
+                            </List>
+                            */}
                             <div className="input-group mb-3">
                                 <input 
                                     type="text"
@@ -50,16 +76,14 @@ const Recipes = () => {
                                 >
                                     <option value="title">By Title</option>
                                     <option value="ingredients">By Ingredients</option>
-                                    <option value="tags">By tags</option>
+                                    <option value="tags">By Tags</option>
                                     <option value="Author">By Author</option>
                                 </select>
                                 <button 
                                     className="btn btn-outline-secondary" 
                                     type="button"
                                     onClick={handleSearch}
-                                >
-                                    Search
-                                </button>
+                                >Search</button>
                             </div>
                             <ul className="list-group">
                                 {recipes.map(recipe => (
@@ -76,14 +100,65 @@ const Recipes = () => {
                                 ))}
                             </ul>
                         </div>
-                        <NavLink to="/register" className="btn text-black btn-outline-info rounded-pill mt-4">
-                            Register to Create a Recipe
-                        </NavLink>
+                        {/*<Trending /> <-- figure out problem      
+                        <div className="col-md-0 d-flex justify-content-center">
+                            <NavLink to="/register" className="btn text-black btn-outline-info rounded-pill mt-4 w-35">
+                                Join Us to Submit!
+                            </NavLink>
+                        </div>
+                        */}
                     </div>
                 </div>
             </section>
         </div>
     );
 }
+
+
+/*const List = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0rem;
+    
+`;
+
+const SLink = styled(NavLink)`
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 2rem;
+    text-decoration: none;
+    background: linear-gradient(35deg, #494949, #313131);
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+    transform: scale(0.8);
+
+    h4{
+        color: white;
+        font-size: 0.8rem;
+
+    }
+    svg{
+        color: white;
+        font-size: 1.5rem;
+    }
+    &.active{
+        background: linear-gradient(to right, #f27121, #e94057);
+
+        svg{
+            color: white;
+
+        }
+        h4{
+            color: white;
+        }
+
+    }
+
+
+`;*/
 
 export default Recipes;

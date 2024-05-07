@@ -32,17 +32,17 @@ const Footer = () => {
                             <h5>Need Help?</h5>
                             <ul className="nav flex-column">
                                 <li className="nav-item mb-2">
-                                    <NavLink to="#" className="nav-link p-0 text-black">
+                                    <NavLink to="/faq" className="nav-link p-0 text-black">
                                         FAQ
                                     </NavLink>
                                 </li>
                                 <li className="nav-item mb-2">
-                                    <NavLink to="#" className="nav-link p-0 text-black">
+                                    <NavLink to="/about" className="nav-link p-0 text-black">
                                         About
                                     </NavLink>
                                 </li>
                                 <li className="nav-item mb-2">
-                                    <NavLink to="#" className="nav-link p-0 text-black">
+                                    <NavLink to="/contact" className="nav-link p-0 text-black">
                                         Contact Us
                                     </NavLink>
                                 </li>
@@ -50,7 +50,7 @@ const Footer = () => {
                         </div>
 
                         <div className="col-4 offset-3">
-                            <img src="/assets/cartoon_icon.jpg" width={120} height={120} alt="About" className="offset-8"/>
+                            <img src="/assets/clipart_0.png" width={120} height={120} alt="About" className="offset-8"/>
                         </div>
                     </div>
                 </footer>

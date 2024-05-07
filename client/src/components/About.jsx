@@ -7,13 +7,15 @@ const About = () => {
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-md-6">
-                        <img src="/assets/about1.png" alt="About"
-                        className="w-75 mt-5" />
+                        <img src="/assets/clipart_0.png" alt="About"
+                        className="w-50 mt-5" />
                     </div>
                     <div className="col-md-6">
                         <h1 className="display-6">Our Mission</h1>
                         <hr className="w-50"/>
-                        <p className="lead mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae tempora doloribus alias dolorum illo quis vel laborum amet! Adipisci, obcaecati asperiores omnis atque sunt vero reprehenderit quae fuga facere amet id. Blanditiis porro nam eaque reprehenderit voluptates rem consequatur. Nihil eius mollitia aspernatur temporibus voluptatibus dolorem iste. Voluptatem, ut cumque molestias, laboriosam aspernatur quas ipsa, unde totam ea fuga exercitationem sapiente inventore minus. Optio ad molestiae unde labore quas est odit? Ullam sapiente aliquam mollitia fuga sed eveniet, iste placeat.</p>
+                        <p className="lead mb-4">Here at NourishNet, we pride ourselves on providing you with the tools you'll need to give you control of your diet!
+                        With #NULL users and climbing, we can't wait to lend our helping hand to the culinary world! 
+                        </p>
                     </div>
                 </div>
             </div>

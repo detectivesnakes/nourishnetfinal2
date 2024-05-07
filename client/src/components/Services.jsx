@@ -18,7 +18,7 @@ const Services = () => {
                                     <div className="fa fa-laptop fa-4x mb-4 text-primary"></div>
                                     <h5 class="card-title mb-3 fs-4 fw-bold">Book-Free</h5>
                                     <p class="card-text lead">
-                                        Any recipe you could want, in one website</p>
+                                        No more sticky notes and dog ears</p>
                                 </div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@ const Services = () => {
                                     <div className="fa fa-star fa-4x mb-4 text-primary"></div>
                                     <h5 class="card-title mb-3 fs-4 fw-bold">Peer Rated</h5>
                                     <p class="card-text lead">
-                                        Know what foods are fan-favorites with our rating system</p>
+                                        Sort fan favorites by rating </p>
                                 </div>
                             </div>
                         </div>
@@ -40,7 +40,7 @@ const Services = () => {
                                     <div className="fa fa-cogs fa-4x mb-4 text-primary"></div>
                                     <h5 class="card-title mb-3 fs-4 fw-bold">Modular</h5>
                                     <p class="card-text lead">
-                                        Recipe browser filters let you stay ontop of your heatlh</p>
+                                        Stay conscious of your heatlh</p>
                                 </div>
                             </div>
                         </div>

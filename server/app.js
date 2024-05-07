@@ -4,9 +4,10 @@ const express = require('express');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-const RecipeModel = require('./models/recipeSchema')
-
+const RecipeModel = require('./models/recipeSchema');
+const cors = require('cors');
 const app = express();
+const authenticate = require('./middlewares/authenticate');
 
 // config env
 dotenv.config({path: './config.env'});
@@ -15,6 +16,7 @@ const port = process.env.PORT;
 
 // req model
 const Users = require('./models/userSchema');
+const Message = require('./models/msgSchema');
 const Recipes = require('./models/recipeSchema');
 
 // frontend cookie grab
@@ -59,18 +61,20 @@ app.post('/login', async (req, res)=>{
             // bcrypt pass hash check
             const isMatch = await bcryptjs.compare(password, user.password);
             if(isMatch) {
-                // gen cookie for user upon match
                 const token = await user.generateToken();
+
                 res.cookie("jwt", token, {
-                    expires: new Date(Date.now + 86400000),
-                    httpOnly: true
+                    expires: new Date(Date.now() + 86400000),
+                    httpOnly: false
                 })
-                res.status(200).send("logged in")
+
+                console.log("\nYoung Metro Trusts You"); // <<-- doesn't get to this point
+                res.status(200).send("Logged In");
             } else {
-                res.status(400).send("bad pass");
+                res.status(400).send("Bad Credentials");
             }
         } else {
-            res.status(400).send("bad email");
+            res.status(400).send("Bad Credentials");
         }
     } catch (err) {
         res.status(400).send(err);
@@ -88,6 +92,7 @@ app.post("/createrecipes", async (req, res) => {
     }
 });
 
+// get recipes
 app.get("/recipes", async (req, res) => {
     try {
         const { title, ingredients, tags, Author } = req.query;
@@ -148,13 +153,53 @@ app.get('/recipes/:recipeId', async (req, res) => {
       res.status(500).json({ message: 'Server error' });
     }
   });
-  
+
+// question to us
+app.post('/message', async (req, res)=>{
+    try {
+        const name = req.body.name;
+        const email = req.body.email;
+        const message = req.body.message;
+
+        const sendMsg = new Message({
+            name: name,
+            email: email,
+            message: message
+        });
+
+        const created = await sendMsg.save();
+        console.log(created);
+        res.status(200).send("message sent");
+
+    } catch (err) {
+        res.status(400).send(err);
+    }
+})
+
+// logout
+app.get('/logout', (req, res)=>{
+    res.clearCookie("jwt", {path: '/'})
+    res.status(200).send("User Logged Out")
+    console.log("Logout, cookie cleared")
+})
+
+// auth
+app.get('/auth', authenticate, (req, res) => {
+    
+})
   
 // run server
 app.listen(port, ()=>{
     console.log("Server Listening");
 })
 
+app.use(
+    cors({
+        origin: ["http://localhost:3000"],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true
+    })
+);
+
+// backend complete
 // npm run dev
-
-

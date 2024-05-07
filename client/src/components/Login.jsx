@@ -1,8 +1,12 @@
 import React from 'react'
 import {useState} from 'react';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 const Login = () => {
+
+    const navigate = useNavigate();
+
     const [user, setUser] = useState({
         email: '',
         password: ''
@@ -32,7 +36,10 @@ const Login = () => {
                 window.alert("Bad Credentials")
             } else {
                 window.alert("Login Successful");
-                window.location.reload();
+                setTimeout(() => {
+                    navigate('/');
+                    window.location.reload();
+                }, 1000);
             }
         } catch (err) {
             console.log(err);
