@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
-
 const CreateRecipes = () => {
     const navigate = useNavigate();
     const [recipeData, setRecipeData] = useState({
@@ -10,8 +9,10 @@ const CreateRecipes = () => {
         description: "",
         ingredients: "",
         tags: "",
-        imageURI: "" // Add imageURI field
+        imageURI: ""
     });
+
+    const [picturedAdded, setPicturedAdded] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,6 +24,14 @@ const CreateRecipes = () => {
                 ...recipeData,
                 [name]: tagsArray
             });
+        } else if (name === 'imageURI' && value && !picturedAdded) {
+            // If the name is 'imageURI' and there is a value, and 'Pictured' tag hasn't been added yet
+            setRecipeData({
+                ...recipeData,
+                [name]: value,
+                tags: [...recipeData.tags, 'Image'] // Automatically add 'Image' tag
+            });
+            setPicturedAdded(true); // Set picturedAdded to true
         } else {
             setRecipeData({
                 ...recipeData,
@@ -34,7 +43,17 @@ const CreateRecipes = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:3000/createrecipes", recipeData);
+            // Retrieve the username from local storage
+            const username = localStorage.getItem('username');
+            
+            // Include the username in the recipe data
+            const dataToSend = {
+                ...recipeData,
+                Author: username 
+            };
+
+            // Send the recipe creation request to the server
+            await axios.post("http://localhost:3000/createrecipes", dataToSend);
             navigate('/');
         } catch (error) {
             console.error("Error submitting recipe:", error);
@@ -116,20 +135,6 @@ const CreateRecipes = () => {
                                 name="imageURI"
                                 placeholder="Enter Image URI"
                                 value={recipeData.imageURI}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className="mb-2">
-                            <label htmlFor="Author" className="form-label">
-                                Author
-                            </label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="Author"
-                                name="Author"
-                                placeholder="Can Enter Author for Now"
-                                value={recipeData.Author}
                                 onChange={handleChange}
                             />
                         </div>

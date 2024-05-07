@@ -66,9 +66,12 @@ app.post('/login', async (req, res)=>{
                 res.cookie("jwt", token, {
                     expires: new Date(Date.now() + 86400000),
                     httpOnly: false
-                })
+                });
 
-                console.log("\nYoung Metro Trusts You"); // <<-- doesn't get to this point
+                // custom response header with the username of the user
+                res.setHeader('X-Username', user.username);
+
+                console.log("\nYoung Metro Trusts You");
                 res.status(200).send("Logged In");
             } else {
                 res.status(400).send("Bad Credentials");
@@ -79,7 +82,8 @@ app.post('/login', async (req, res)=>{
     } catch (err) {
         res.status(400).send(err);
     }
-})
+});
+
 
 // Recipe Database
 app.post("/createrecipes", async (req, res) => {
