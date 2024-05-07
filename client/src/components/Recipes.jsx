@@ -5,7 +5,7 @@ import axios from 'axios';
 import {FaPizzaSlice, FaHamburger} from 'react-icons/fa';
 import {GiNoodles, GiChopsticks} from 'react-icons/gi';
 import styled from 'styled-components';
-import Trending from "../components/Trending";
+//import Trending from "../components/Trending";
 
 
 const Recipes = () => {

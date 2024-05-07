@@ -52,7 +52,7 @@ const Dashboard = () => {
                   </div>
                   <div class="mb-2">
                     <label htmlFor="exampleInputPassword1" class="form-label">
-                      Confirm Password
+                      Custom Database Filters
                     </label>
                     <input
                       type="password"
@@ -61,6 +61,7 @@ const Dashboard = () => {
                       name="password"
                     />
                   </div>
+                  <div id="emailHelp" class="form-text">Separate with spaces!</div>
                   <button type="submit" class="btn btn-primary my-2 mt-3 mb-3">Update</button>
                 </form>
               </div>
