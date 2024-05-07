@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import background from './kitchen.jpg';
+import background from '../kitchen.jpg';
 import { Link } from 'react-router-dom'; // Importing Link
 //import { NavLink } from 'react-router-dom';
 import axios from 'axios';

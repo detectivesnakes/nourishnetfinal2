@@ -1,14 +1,19 @@
 /* HOME */
 #home{
-    background: rgb(0,101,219);
-    background: linear-gradient(90deg, rgb(170,200,170) 0%, rgba(215,200,170,1)
+    background: linear-gradient(90deg, rgb(101, 206, 101) 0%, rgb(190, 210, 188)
     100%);
     min-height: 210px;
 }
 
+/* ABOUT */
 #about{
-    background: rgb(215,200,170);
-    min-height: 410px;
+    background: linear-gradient(90deg, rgb(101, 206, 101) 0%, rgb(190, 210, 188)
+    100%);
+}
+
+/* FOOTER */
+.footer{
+    background: rgb(134, 180, 131);
 }
 
 #faq{
@@ -34,7 +39,3 @@
     100%);
 }
 
-/* FOOT */
-.footer{
-    background: rgb(215,200,170);
-}
