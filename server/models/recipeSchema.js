@@ -17,6 +17,10 @@ const recipeSchema = new mongoose.Schema({
         type: String,
         required: true
     }],
+    imageURI: {
+        type: String,
+        
+    },
     Author: {
         type: String,
         required: true

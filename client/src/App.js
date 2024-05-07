@@ -16,6 +16,7 @@ import { Routes, Route } from 'react-router-dom';
 import RecipeTemplate from './components/RecipeTemplate';
 import ProtectedRoute from './ProtectedRoute';
 import { useEffect, useState } from 'react';
+import TagSearch from './components/TagSearch';
 
 function App() {
 
@@ -55,6 +56,8 @@ function App() {
     <div className='App'>
       <Navbar auth={auth}/>
       <Routes>
+        
+        <Route path="/tagSearch" element={<TagSearch />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
@@ -63,6 +66,7 @@ function App() {
 
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/createrecipes" element={<CreateRecipes />} />
+
         <Route path="/recipe/:recipeId" element={<RecipeTemplate />} />
 
         <Route path="/login"     element={<Login />}     auth={false}/>
