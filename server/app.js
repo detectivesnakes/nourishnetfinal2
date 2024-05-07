@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const RecipeModel = require('./models/recipeSchema');
 const cors = require('cors');
 const app = express();
+const authenticate = require('./middlewares/authenticate');
 
 // config env
 dotenv.config({path: './config.env'});
@@ -179,6 +180,11 @@ app.post('/message', async (req, res)=>{
 app.get('/logout', (req, res)=>{
     res.clearCookie("jwt", {path: '/'})
     res.status(200).send("User Logged Out")
+})
+
+// auth
+app.get('/auth', authenticate, (req, res) => {
+    
 })
   
 // run server
