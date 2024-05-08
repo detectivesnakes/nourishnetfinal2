@@ -70,7 +70,7 @@ const Recipes = () => {
                                             <p>Tags: {Array.isArray(recipe.tags) ? recipe.tags.map(tag => <span key={tag} className="badge bg-secondary me-1">{tag}</span>) : recipe.tags}</p>
                                             <Link to={`/recipe/${recipe._id}`} className="btn btn-secondary">View Recipe</Link> {/* View Recipe button at the bottom */}
                                         </div>
-                                        {recipe.imageURI && <img src={recipe.imageURI} alt={recipe.title} style={{ width: '100px', height: '100px' }} />} {/* Display thumbnail if imageURI exists */}
+                                        {recipe.imageURI && <img src={recipe.imageURI} alt={recipe.title} style={{ width: '100px', height: '100px' }} />}
                                     </li>
                                 ))}
                             </ul>

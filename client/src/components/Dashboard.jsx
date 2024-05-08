@@ -17,7 +17,7 @@ const Dashboard = () => {
           <div className="row justify-content-center">
             <div className="col-md-8 mt-4 mb-2">
               <h1 className="display-4 fw-bolder mb-2 text-center">Hello, {username || "Guest"}</h1>
-              <p className="lead text-center fs-4">Your Profile</p>
+              <p className="lead text-center fs-4">Welcome Back</p>
               <div className="col">
 
                 {/*<form method="POST">
