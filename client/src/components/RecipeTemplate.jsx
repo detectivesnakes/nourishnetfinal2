@@ -25,6 +25,14 @@ const RecipeTemplate = () => {
     fetchRecipe();
   }, [recipeId]);
 
+  const handleSubmit = async () =>{
+    try {
+      window.location.reload();
+    } catch (err) {
+        console.log(err);
+    }
+  }
+
   const handleTagClick = (tag) => {
     // Redirect to TagSearch page with the tag as a query parameter
     window.location.href = `/tagSearch?tag=${tag}`;
@@ -73,7 +81,7 @@ const RecipeTemplate = () => {
           </div>
         )} </div>
         <div className="col-mx-6 d-flex mx-auto">
-          <button type="submit" class="btn btn-outline-secondary fa fa-thumbs-up">  {recipe ? recipe.likes : 'N/A'}</button>
+          <button type="submit" onClick={handleSubmit} class="btn btn-outline-secondary fa fa-thumbs-up">  {recipe ? recipe.likes : 'N/A'}</button>
           <button type="submit" class="btn btn-outline-secondary fa fa-thumbs-down">  {recipe ? recipe.dislikes : 'N/A'}</button>
         </div>
     </div>
