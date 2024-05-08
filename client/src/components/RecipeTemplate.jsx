@@ -38,42 +38,44 @@ const RecipeTemplate = () => {
   }
 
   return (
-      <div className="container my-5 py-5">
-        <div className="row">
-          <div className="col-md-6">
-            <h1 className="display-4">{recipe ? recipe.title : 'Recipe Not Found'}</h1>
-            <p><strong>Description:</strong> {recipe ? recipe.description : 'N/A'}</p>
-            <p><strong>Ingredients:</strong> {recipe ? recipe.ingredients : 'N/A'}</p>
+    <div className="container my-5 py-5">
+      <div className="row">
+        <div className="col-md-6">
+          <h1 className="display-4">{recipe ? recipe.title : 'Recipe Not Found'}</h1>
+          <p><strong>Description:</strong> {recipe ? recipe.description : 'N/A'}</p>
+          <p><strong>Ingredients:</strong> {recipe ? recipe.ingredients : 'N/A'}</p>
 
-            <p>
-              <strong>Directions:</strong>
-              {recipe && recipe.directions.length > 0 ? (
-                recipe.directions.map((dir, index) => (
+          <p>
+            <strong>Directions:</strong>
+            {recipe && recipe.directions.length > 0 ? (
+              recipe.directions.map((dir, index) => (
 
-                  <div>Step {index+1} : {dir}</div> ))) : (' N/A')}
-            </p>
+                <div>Step {index + 1} : {dir}</div>))) : (' N/A')}
+          </p>
 
 
-            <p>
-              <strong>Tags:</strong>
-              {recipe && recipe.tags.length > 0 ? (
-                recipe.tags.map((tag, index) => (
-                  <button
-                    key={index} className="btn btn-outline-dark btn-sm mx-1 mb-1"
-                    onClick={() => handleTagClick(tag)}>
-                    {tag}
-                  </button>))) : ('N/A')}
-            </p>
+          <p>
+            <strong>Tags:</strong>
+            {recipe && recipe.tags.length > 0 ? (
+              recipe.tags.map((tag, index) => (
+                <button
+                  key={index} className="btn btn-outline-dark btn-sm mx-1 mb-1"
+                  onClick={() => handleTagClick(tag)}>
+                  {tag}
+                </button>))) : ('N/A')}
+          </p>
 
-            <p><strong>Author:</strong> {recipe ? recipe.Author : 'N/A'}</p>
+          <p><strong>Author:</strong> {recipe ? recipe.Author : 'N/A'}</p>
+        </div> {recipe && recipe.imageURI && (
+          <div className="col-md-6 d-flex justify-content-center align-items-center">
+            <img src={recipe.imageURI} alt={recipe.title} className="img-fluid" style={{ maxWidth: '100%', maxHeight: '400px' }} />
           </div>
-          {recipe && recipe.imageURI && (
-            <div className="col-md-6 d-flex justify-content-center align-items-center">
-              <img src={recipe.imageURI} alt={recipe.title} className="img-fluid" style={{ maxWidth: '100%', maxHeight: '400px' }} />
-            </div>
-          )}
+        )} </div>
+        <div className="col-mx-6 d-flex mx-auto">
+          <button type="submit" class="fa fa-thumbs-up btn btn-outline-secondary">  {recipe ? recipe.likes : 'N/A'}</button>
+          <button type="submit" class="fa fa-thumbs-down btn btn-outline-secondary pl-4">  {recipe ? recipe.dislikes : 'N/A'}</button>
         </div>
-      </div>
+    </div>
   );
 };
 

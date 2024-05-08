@@ -54,7 +54,7 @@ const Recipes = () => {
                                     <option value="Author">By Author</option>
                                 </select>
                                 <button
-                                    className="btn btn-outline-secondary"
+                                    className="btn btn-secondary"
                                     type="button"
                                     onClick={handleSearch}
                                 >Search</button>
@@ -67,7 +67,7 @@ const Recipes = () => {
                                             <p>Summary: {recipe.description}</p>
                                             <p>Author: {recipe.Author}</p>
                                             <p>Tags: {Array.isArray(recipe.tags) ? recipe.tags.map(tag => <span key={tag} className="badge bg-secondary me-1">{tag}</span>) : recipe.tags}</p>
-                                            <Link to={`/recipe/${recipe._id}`} className="btn btn-primary">View Recipe</Link> {/* View Recipe button at the bottom */}
+                                            <Link to={`/recipe/${recipe._id}`} className="btn btn-secondary">View Recipe</Link> {/* View Recipe button at the bottom */}
                                         </div>
                                         {recipe.imageURI && <img src={recipe.imageURI} alt={recipe.title} style={{ width: '100px', height: '100px' }} />} {/* Display thumbnail if imageURI exists */}
                                     </li>

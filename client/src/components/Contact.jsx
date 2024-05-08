@@ -102,7 +102,7 @@ const Contact = () => {
                                         onChange={handleChange}
                                         />
                                 </div>
-                                <button type="submit" className="btn btn-outline-primary">Submit
+                                <button type="submit" className="btn btn-outline-secondary">Submit
                                 <i className="fa fa-paper-plane ms-2"></i></button>
                             </form>
                         </div>

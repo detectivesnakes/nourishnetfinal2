@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = (props) => {
+  const [username, setUsername] = useState("");
+
+    useEffect(() => {
+        // Retrieve the username from local storage
+        const storedUsername = localStorage.getItem('username');
+        setUsername(storedUsername);
+    }, []);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light shadow">
@@ -22,9 +30,13 @@ const Navbar = (props) => {
                 <li className="nav-item">
                   <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
                 </li>
+
+                {/*
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/dashboard">Profile</NavLink>
                 </li>
+                */}
+
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/createrecipes">Add</NavLink>
                 </li>
@@ -40,6 +52,7 @@ const Navbar = (props) => {
               <NavLink to="/register" className="bt btn-outline-primary ms-2 px-4 rounded-pill">
                 <i className="fa fa-user-plus"></i>Register</NavLink>
             </> : <>
+            <header className="mb-2 text-center">Logged in as  {username || "Guest"}</header>
               <NavLink to="/logout" className="bt btn-outline-primary ms-2 px-4 rounded-pill">
                 <i className="fa fa-sign-out"></i>Log Out</NavLink>
             </>}

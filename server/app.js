@@ -180,6 +180,10 @@ app.post('/message', async (req, res)=>{
     }
 })
 
+// like
+
+// dislike
+
 // logout
 app.get('/logout', (req, res)=>{
     res.clearCookie("jwt", {path: '/'})
