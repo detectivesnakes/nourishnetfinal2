@@ -24,12 +24,13 @@ const userSchema = new mongoose.Schema({
             required: true
         }
     }],
-    filters: [{
-        filter: {
+    filters: {
             type: String,
             required: false
-        }
-    }]
+    },
+    usericon: {
+        type: String
+    }
 })
 
 // hashing and salting w bcrypt

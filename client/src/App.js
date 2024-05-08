@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import About from './components/About';
 import Services from './components/Services';
+import Featured from './components/Featured';
 import Contact from './components/Contact';
 import FAQ from './components/FAQ';
 import Login from './components/Login';
@@ -62,6 +63,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path='/featured' element={<Featured />} />
 
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/createrecipes" element={<CreateRecipes />} />

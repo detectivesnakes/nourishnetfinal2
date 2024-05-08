@@ -34,11 +34,13 @@ app.post('/register', async (req, res)=>{
         const username = req.body.username;
         const email = req.body.email;
         const password = req.body.password;
+        const usericon = req.body.usericon;
 
         const createUser = new Users({
             username: username,
             email: email,
-            password: password
+            password: password,
+            usericon: usericon
         });
 
         const created = await createUser.save();
@@ -179,8 +181,6 @@ app.post('/message', async (req, res)=>{
         res.status(400).send(err);
     }
 })
-
-// like
 
 // dislike
 

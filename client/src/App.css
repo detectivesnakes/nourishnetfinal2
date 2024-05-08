@@ -11,6 +11,11 @@
     100%);
 }
 
+/* FEATURED */
+#featured{
+    
+}
+
 /* NAVBAR */
 #navbar{
     background-image: url('kitchen.jpg')
@@ -68,3 +73,21 @@
         background-position: 0% 50%;
       }
 };
+
+.likebutton {
+
+}
+
+.likebutton:active {
+    background-color: #3e8e41;
+    transform: translateY(1px);
+}
+
+.dislikebutton {
+
+}
+
+.dislikebutton:active {
+    background-color: #ad3030;
+    transform: translateY(1px);
+}

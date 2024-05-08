@@ -20,6 +20,7 @@ const RecipeTemplate = () => {
         setLoading(false);
       }
     };
+    
 
     fetchRecipe();
   }, [recipeId]);
@@ -72,8 +73,8 @@ const RecipeTemplate = () => {
           </div>
         )} </div>
         <div className="col-mx-6 d-flex mx-auto">
-          <button type="submit" class="fa fa-thumbs-up btn btn-outline-secondary">  {recipe ? recipe.likes : 'N/A'}</button>
-          <button type="submit" class="fa fa-thumbs-down btn btn-outline-secondary pl-4">  {recipe ? recipe.dislikes : 'N/A'}</button>
+          <button type="submit" class="btn btn-outline-secondary fa fa-thumbs-up">  {recipe ? recipe.likes : 'N/A'}</button>
+          <button type="submit" class="btn btn-outline-secondary fa fa-thumbs-down">  {recipe ? recipe.dislikes : 'N/A'}</button>
         </div>
     </div>
   );

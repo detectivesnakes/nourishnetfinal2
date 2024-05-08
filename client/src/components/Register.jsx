@@ -8,7 +8,8 @@ const Register = () => {
     const [user, setUser] = useState({
         username: "",
         email: "",
-        password: ""
+        password: "",
+        usericon: 'https://icon-library.com/images/default-profile-icon/default-profile-icon-16.jpg'
     });
 
     // handle input
@@ -22,7 +23,7 @@ const Register = () => {
     // handle submissions
     const handleSubmit = async(event) => {
         event.preventDefault();
-        const {username, email, password} = user;
+        const {username, email, password, usericon} = user;
         try {
             // push port 3001 instead of 3000 (backend)
             const res = await fetch ('/register', {
@@ -31,7 +32,7 @@ const Register = () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    username, email, password
+                    username, email, password, usericon
                 })
             })
 

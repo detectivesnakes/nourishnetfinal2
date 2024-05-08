@@ -31,11 +31,9 @@ const Navbar = (props) => {
                   <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
                 </li>
 
-                {/*
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/dashboard">Profile</NavLink>
                 </li>
-                */}
 
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/createrecipes">Add</NavLink>
@@ -47,13 +45,13 @@ const Navbar = (props) => {
             </ul>
 
             {props.auth ? <>
-              <NavLink to="/login" className="bt btn-outline-primary ms-2 px-4 rounded-pill">
+              <NavLink to="/login" className="bt btn-outline-secondary ms-2 px-4 rounded-pill">
                 <i className="fa fa-sign-in"></i>Login</NavLink>
-              <NavLink to="/register" className="bt btn-outline-primary ms-2 px-4 rounded-pill">
+              <NavLink to="/register" className="bt btn-outline-secondary ms-2 px-4 rounded-pill">
                 <i className="fa fa-user-plus"></i>Register</NavLink>
             </> : <>
             <header className="mb-2 text-center">Logged in as  {username || "Guest"}</header>
-              <NavLink to="/logout" className="bt btn-outline-primary ms-2 px-4 rounded-pill">
+              <NavLink to="/logout" className="bt btn-outline-secondary ms-2 px-4 rounded-pill">
                 <i className="fa fa-sign-out"></i>Log Out</NavLink>
             </>}
 

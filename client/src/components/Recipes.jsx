@@ -53,6 +53,7 @@ const Recipes = () => {
                                     <option value="tags">By Tags</option>
                                     <option value="Author">By Author</option>
                                 </select>
+
                                 <button
                                     className="btn btn-secondary"
                                     type="button"
