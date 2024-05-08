@@ -53,9 +53,9 @@ const Login = () => {
         <div>
             <div className="container shadow-lg my-5">
                 <div className="row">
-                    <div className="col-md-5 d-flex flex-column align-items-center justify-content-center form">
+                    <div className="col-md-5 d-flex flex-column align-items-center justify-content-center anim_gradient">
                         <h1 className="display-4 fw-bolder my-2">New to the Net?</h1>
-                        <NavLink to="/register" className="btn text-black btn-outline-info rounded-pill pb-2 w-50 m-2 mb-2">
+                        <NavLink to="/register" className="btn text-black btn-outline-secondary rounded-pill pb-2 w-50 m-2 mb-2">
                             Register
                         </NavLink>
                     </div>
@@ -88,7 +88,7 @@ const Login = () => {
                                     onChange={handleChange}
                                 />
                             </div>
-                            <button type="submit" class="btn btn-primary my-2 mb-3">Log In</button>
+                            <button type="submit" class="btn btn-secondary my-2 mb-3">Log In</button>
                         </form>
                     </div>
                 </div>

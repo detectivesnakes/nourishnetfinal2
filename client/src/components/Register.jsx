@@ -54,9 +54,9 @@ const Register = () => {
         <div>
             <div className="container shadow-lg my-5">
                 <div className="row justify-content-end">
-                    <div className="col-md-5 d-flex flex-column align-items-center justify-content-center form order-2">
+                    <div className="col-md-5 d-flex flex-column align-items-center justify-content-center anim_gradient order-2">
                         <h1 className="display-4 fw-bolder my-2">Already With Us?</h1>
-                        <Link to="/login" className="btn text-black btn-outline-info rounded-pill pb-2 w-50 m-2 mb-2">
+                        <Link to="/login" className="btn text-black btn-outline-secondary rounded-pill pb-2 w-50 m-2 mb-2">
                             Log In
                         </Link>
                     </div>
@@ -102,7 +102,7 @@ const Register = () => {
                                     onChange={handleInput}
                                 />
                             </div>
-                            <button type="submit" class="btn btn-primary my-2 mb-3">Register</button>
+                            <button type="submit" class="btn btn-secondary my-2 mb-3">Register</button>
                         </form>
                     </div>
                 </div>

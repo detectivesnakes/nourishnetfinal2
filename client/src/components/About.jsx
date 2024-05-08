@@ -6,9 +6,8 @@ const About = () => {
         <section>
             <div className="container my-5 py-5">
                 <div className="row">
-                    <div className="col-md-6">
-                        <img src="/assets/clipart_0.png" alt="About"
-                        className="w-25" />
+                    <div className="col-md-6 d-flex justify-content-center">
+                        <img src="/assets/clipart_0.png" alt='embed' class="w-auto h-auto"/>
                     </div>
                     <div className="col-md-6">
                         <h1 className="display-6">Our Mission</h1>
