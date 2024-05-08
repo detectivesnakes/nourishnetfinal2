@@ -13,6 +13,10 @@ const recipeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    directions: [{
+        type: String,
+        required: true
+    }],
     tags: [{
         type: String,
         required: true

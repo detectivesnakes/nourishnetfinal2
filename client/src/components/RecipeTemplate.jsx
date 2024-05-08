@@ -44,22 +44,27 @@ const RecipeTemplate = () => {
             <h1 className="display-4">{recipe ? recipe.title : 'Recipe Not Found'}</h1>
             <p><strong>Description:</strong> {recipe ? recipe.description : 'N/A'}</p>
             <p><strong>Ingredients:</strong> {recipe ? recipe.ingredients : 'N/A'}</p>
+
+            <p>
+              <strong>Directions:</strong>
+              {recipe && recipe.directions.length > 0 ? (
+                recipe.directions.map((dir, index) => (
+
+                  <div>Step {index+1} : {dir}</div> ))) : (' N/A')}
+            </p>
+
+
             <p>
               <strong>Tags:</strong>
               {recipe && recipe.tags.length > 0 ? (
                 recipe.tags.map((tag, index) => (
                   <button
-                    key={index}
-                    className="btn btn-outline-dark btn-sm mx-1 mb-1"
-                    onClick={() => handleTagClick(tag)}
-                  >
+                    key={index} className="btn btn-outline-dark btn-sm mx-1 mb-1"
+                    onClick={() => handleTagClick(tag)}>
                     {tag}
-                  </button>
-                ))
-              ) : (
-                'N/A'
-              )}
+                  </button>))) : ('N/A')}
             </p>
+
             <p><strong>Author:</strong> {recipe ? recipe.Author : 'N/A'}</p>
           </div>
           {recipe && recipe.imageURI && (

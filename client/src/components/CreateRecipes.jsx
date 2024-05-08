@@ -8,6 +8,7 @@ const CreateRecipes = () => {
         title: "",
         description: "",
         ingredients: "",
+        directions: "",
         tags: "",
         imageURI: ""
     });
@@ -23,6 +24,13 @@ const CreateRecipes = () => {
             setRecipeData({
                 ...recipeData,
                 [name]: tagsArray
+            });
+        } else if (name === 'directions') {
+            // If the name is 'directions', split the value by commas to create list
+            const dirArray = value.split(',').map(dir => dir.trim());
+            setRecipeData({
+                ...recipeData,
+                [name]: dirArray
             });
         } else if (name === 'imageURI' && value && !picturedAdded) {
             // If the name is 'imageURI' and there is a value, and 'Pictured' tag hasn't been added yet
@@ -105,11 +113,27 @@ const CreateRecipes = () => {
                                 className="form-control"
                                 id="ingredients"
                                 name="ingredients"
-                                placeholder="Enter Recipe Ingredients (comma-separated)"
+                                placeholder="Enter Recipe Ingredients"
                                 value={recipeData.ingredients}
                                 onChange={handleChange}
                             />
                         </div>
+
+                        <div className="mb-2">
+                            <label htmlFor="directions" className="form-label">
+                                Directions
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="directions"
+                                name="directions"
+                                placeholder="Enter Recipe Directions"
+                                value={recipeData.directions}
+                                onChange={handleChange}
+                            />
+                        </div>
+
                         <div className="mb-2">
                             <label htmlFor="tags" className="form-label">
                                 Tags
@@ -119,11 +143,12 @@ const CreateRecipes = () => {
                                 className="form-control"
                                 id="tags"
                                 name="tags"
-                                placeholder="Enter Recipe Tags (comma-separated)"
+                                placeholder="Enter Recipe Tags"
                                 value={recipeData.tags}
                                 onChange={handleChange}
                             />
                         </div>
+                        
                         <div className="mb-2">
                             <label htmlFor="imageURI" className="form-label">
                                 Image URI
