@@ -10,7 +10,9 @@ const CreateRecipes = () => {
         ingredients: "",
         directions: "",
         tags: "",
-        imageURI: ""
+        imageURI: "",
+        likes: 0,
+        dislikes: 0
     });
 
     const [picturedAdded, setPicturedAdded] = useState(false);
@@ -27,7 +29,7 @@ const CreateRecipes = () => {
             });
         } else if (name === 'directions') {
             // If the name is 'directions', split the value by commas to create list
-            const dirArray = value.split(',').map(dir => dir.trim());
+            const dirArray = value.split(',').map(dir => dir);
             setRecipeData({
                 ...recipeData,
                 [name]: dirArray
@@ -37,7 +39,7 @@ const CreateRecipes = () => {
             setRecipeData({
                 ...recipeData,
                 [name]: value,
-                tags: [...recipeData.tags, 'Image'] // Automatically add 'Image' tag
+                tags: [...recipeData.tags, 'image'] // Automatically add 'Image' tag
             });
             setPicturedAdded(true); // Set picturedAdded to true
         } else {
