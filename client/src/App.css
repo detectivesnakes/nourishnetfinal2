@@ -13,12 +13,12 @@
 
 /* FOOTER */
 .footer{
-    background: rgb(134, 180, 131);
+    background: rgb(192, 177, 162);
 }
 
 /* RECIPE */
 #recipe{
-    background-image: url('board.png');
+    background: rgb(255,255,255);
     background-repeat: no-repeat;
     padding: 1px;
 }
