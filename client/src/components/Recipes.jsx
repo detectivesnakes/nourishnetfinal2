@@ -5,8 +5,8 @@ import axios from 'axios';
 
 const Recipes = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchType, setSearchType] = useState('title'); 
-    
+    const [searchType, setSearchType] = useState('title');
+
     const [recipes, setRecipes] = useState([]);
 
     const handleSearch = async () => {
@@ -36,7 +36,7 @@ const Recipes = () => {
                             <h1 className="display-4 fw-bolder mb text-center">Recipe Search</h1>
                             <p className="lead text-center fs-4 mb-5">Let's Cook!</p>
                             <div className="input-group mb-3">
-                                <input 
+                                <input
                                     type="text"
                                     className="form-control"
                                     placeholder="Search..."
@@ -44,7 +44,7 @@ const Recipes = () => {
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                     onKeyPress={handleKeyPress}
                                 />
-                                <select 
+                                <select
                                     className="form-select"
                                     onChange={(e) => setSearchType(e.target.value)}
                                 >
@@ -53,8 +53,8 @@ const Recipes = () => {
                                     <option value="tags">By Tags</option>
                                     <option value="Author">By Author</option>
                                 </select>
-                                <button 
-                                    className="btn btn-outline-secondary" 
+                                <button
+                                    className="btn btn-outline-secondary"
                                     type="button"
                                     onClick={handleSearch}
                                 >Search</button>

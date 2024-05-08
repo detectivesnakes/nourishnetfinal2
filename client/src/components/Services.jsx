@@ -1,14 +1,14 @@
 import React from "react";
 
 const Services = () => {
-    return(
+    return (
         <div>
             <section id="service">
                 <div className="container my-5 py-5">
                     <div className="row">
                         <div className="col-12">
                             <h1 className="display-6 text-center mb-4"><b>Features</b></h1>
-                            <hr className="w-25 mx-auto"/>
+                            <hr className="w-25 mx-auto" />
                         </div>
                     </div>
                     <div className="row mt-5">

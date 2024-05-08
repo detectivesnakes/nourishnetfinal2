@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//import { NavLink } from 'react-router-dom';
 
 const Dashboard = () => {
   const [username, setUsername] = useState("");
@@ -25,14 +24,14 @@ const Dashboard = () => {
                       Custom Database Filters
                     </label>
                     <input
-                      type="password"
+                      type="text"
                       class="form-control"
                       id="exampleInputPassword1"
-                      name="password"
+                      name="filters"
                     />
                   </div>
                   <div id="emailHelp" class="form-text">Separate with commas</div>
-                  <button type="submit" class="btn btn-primary my-2 mt-3 mb-3">Update</button>
+                  <button type="submit" class="btn btn-secondary my-2 mt-3 mb-3">Update</button>
                 </form>
               </div>
             </div>

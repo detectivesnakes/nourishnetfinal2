@@ -14,7 +14,10 @@ const About = () => {
                         <h1 className="display-6">Our Mission</h1>
                         <hr className="w-50"/>
                         <p className="lead mb-4">Here at NourishNet, we pride ourselves on providing you with the tools you'll need to give you control of your diet!
-                        With #NULL users and climbing, we can't wait to lend our helping hand to the culinary world! 
+
+                        You don't need to create an account to search our recipe book. We swear! Accounts are only necessary to add to the database, or save your preferences.
+
+                        With an ever expanding userbase, we're eager to lend our helping hand to the online culinary world!
                         </p>
                     </div>
                 </div>

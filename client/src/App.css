@@ -11,6 +11,11 @@
     100%);
 }
 
+/* NAVBAR */
+#navbar{
+    background-image: url('kitchen.jpg')
+}
+
 /* FOOTER */
 .footer{
     background: rgb(192, 177, 162);
@@ -41,7 +46,7 @@
 
 /* FORM */
 .form{
-    background: rgb(0,85,180);
+    background: rgb(61, 156, 64);
     background: linear-gradient(90deg, rgb(170,200,170) 0%, rgba(215,200,170,1)
     100%);
 }

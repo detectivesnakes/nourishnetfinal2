@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
+    const navigate = useNavigate();
     const [msg, setMsg] = useState({
         name: '',
         email: '',
@@ -40,6 +42,7 @@ const Contact = () => {
                     email: '',
                     message: ''
                 })
+                navigate('/');
             }
         } catch (err) {
             console.log(err);

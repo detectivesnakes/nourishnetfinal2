@@ -138,7 +138,7 @@ const CreateRecipes = () => {
                                 onChange={handleChange}
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary my-2 mb-3">Submit</button>
+                        <button type="submit" className="btn btn-outline-secondary my-2 mb-3">Submit</button>
                     </form>
                 </div>
             </div>
