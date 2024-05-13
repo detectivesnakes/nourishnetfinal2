@@ -7,7 +7,7 @@ const About = () => {
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-md-6 d-flex justify-content-center">
-                        <img src="/assets/clipart_0.png" alt='embed' class="w-auto h-auto"/>
+                        <img src="/assets/clipart_0.png" alt='embed' class="w-3 h-3"/>
                     </div>
                     <div className="col-md-6">
                         <h1 className="display-6">Our Mission</h1>
